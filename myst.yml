@@ -1,0 +1,18 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: afb17111-6893-49bd-937e-8611c00b6719
+  title: DHIS2 Climate Tools
+  description: A collection of tools and workflows to add climate and environmental data to DHIS2.
+  keywords:
+    - climate
+    - dhis2
+    - jupyter-book
+  authors: []
+  github: https://github.com/dhis2/climate-tools
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
