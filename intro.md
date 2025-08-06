@@ -1,3 +1,0 @@
-# Introduction
-
-I am a book about ...
