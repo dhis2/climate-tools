@@ -1,0 +1,17 @@
+{
+  "name": "climate-tools",
+  "version": "0.0.1",
+  "description": "Tools and workflows to add climate, weather and environmental data to DHIS2.",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhis2/climate-tools.git"
+  },
+  "homepage": "https://dhis2.github.io/climate-tools",
+  "scripts": {
+    "start": "jupyter-book start"
+  },
+  "dependencies": {
+    "jupyter-book": "^2.0.0"
+  }
+}
