@@ -18,6 +18,7 @@ project:
       file: docs/data-aggregation.md
       children:
         - file: docs/organization-units.md
+        - file: docs/earthkit/earthkit-aggregation.ipynb
     - file: docs/glossary.md
 site:
   template: book-theme
