@@ -9,7 +9,8 @@
   },
   "homepage": "https://dhis2.github.io/climate-tools",
   "scripts": {
-    "start": "jupyter-book start"
+    "start": "jupyter-book start",
+    "toc": "jupyter book init --write-toc"
   },
   "dependencies": {
     "jupyter-book": "^2.0.0"
