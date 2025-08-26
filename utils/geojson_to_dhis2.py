@@ -11,7 +11,7 @@ import random
 from datetime import date
 from pathlib import Path
 
-def main(geojson_file, country, country_code, name_field):
+def main(geojson_file, country, name_field):
     print(f'Converting geojson file {geojson_file} to dhis2 compatible import files')
     org_units = []
 
@@ -38,10 +38,10 @@ def main(geojson_file, country, country_code, name_field):
         "id": country_uid,
         "name": country,
         "shortName": country,
-        "code": country_code,
+        #"code": country_code,
         "openingDate": str(date.today()),
         "level": 1,
-        "featureType": "NONE"
+        #"featureType": "NONE"
     }
     org_units.append(country_org_unit)
 
@@ -64,8 +64,8 @@ def main(geojson_file, country, country_code, name_field):
             "parent": {
                 "id": country_uid
             },
-            "featureType": "MULTI_POLYGON" if geom["type"]=="MultiPolygon" else geom["type"].upper(),
-            "coordinates": geom["coordinates"]
+            #"featureType": "MULTI_POLYGON" if geom["type"]=="MultiPolygon" else geom["type"].upper(),
+            #"coordinates": geom["coordinates"]
         }
         org_units.append(org_unit)
 
@@ -86,7 +86,7 @@ def main(geojson_file, country, country_code, name_field):
     for feat,org_unit in zip(geojson['features'], org_sub_units):
         #print(str(feat)[:100], 'vs', str(org_unit)[:100])
         feat['id'] = org_unit['id']
-        org_unit.pop('featureType')
+        org_unit.pop('featureType', None)
         org_unit.pop('coordinates', None)
         feat['properties'] = org_unit
 
@@ -99,6 +99,5 @@ def main(geojson_file, country, country_code, name_field):
 if __name__ == '__main__':
     geojson_file = sys.argv[1]
     country_name = sys.argv[2]
-    country_code = sys.argv[3]
-    name_field = sys.argv[4]
-    main(geojson_file, country_name, country_code, name_field)
+    name_field = sys.argv[3]
+    main(geojson_file, country_name, name_field)
