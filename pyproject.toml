@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dhis2eo"
+version = "0.1.0"
+description = "DHIS2 Earth Observation Toolkit"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "pyshp==2.*",
+]
+
+[project.scripts]
+climtools = "dhis2eo.cli.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["dhis2eo"]
