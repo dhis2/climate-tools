@@ -1,2 +1,0 @@
-requests
-pyshp==2.*
