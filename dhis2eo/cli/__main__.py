@@ -1,6 +1,6 @@
 import sys
 import argparse
-from . import geojson_to_dhis2, inspect_geojson
+from . import geojson_inspect, geojson_to_dhis2
 
 # custom argparser
 class CustomArgumentParser(argparse.ArgumentParser):
@@ -16,7 +16,7 @@ def main():
 
     # register subparsers
     geojson_to_dhis2.register_parser(subparsers)
-    inspect_geojson.register_parser(subparsers)
+    geojson_inspect.register_parser(subparsers)
 
     # parse arguments
     args = parser.parse_args()

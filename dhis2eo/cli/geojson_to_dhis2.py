@@ -96,9 +96,9 @@ def main(
 
 def register_parser(subparsers):
     description = '''Converts a geojson file to a json metadata file and a geometry geojson file
-    that can be used to easily setup a new orgunit hierarchy using the DHIS2 Import page.'''
+    that can be used to easily setup a new org unit hierarchy using the DHIS2 Import page.'''
     parser = subparsers.add_parser("geojson-to-dhis2", help=description)
     parser.add_argument("geojson_file", help="Path to the GeoJSON File")
-    parser.add_argument("country", help="Name to use for the parent orgunit, typically a country name")
-    parser.add_argument("name_field", help="Field that contains the name of each orgunit")
+    parser.add_argument("country", help="Name to use for the parent org unit, typically a country name")
+    parser.add_argument("name_field", help="Field that contains the name of each org unit")
     #parser.set_defaults(func=lambda args: main(args.input, args.output))
