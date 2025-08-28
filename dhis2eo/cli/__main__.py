@@ -9,9 +9,9 @@ class CustomArgumentParser(argparse.ArgumentParser):
         self.print_help()
         sys.exit(2)
 
-# Run
+# run
 def main():
-    parser = CustomArgumentParser(prog="climtools", description="Climate tools CLI")
+    parser = CustomArgumentParser(prog="dhis2eo", description="DHIS2 Earth Observation CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # register subparsers
