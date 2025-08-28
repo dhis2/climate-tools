@@ -1,26 +1,35 @@
 # Climate Tools
 
-Site: https://dhis2.github.io/climate-tools
+**Climate Tools** is the umbrella project for working with DHIS2 and environmental / climate-related data.  
+It includes online documentation, guides, tutorials, and the `dhis2eo` Python package and CLI tool.
+
+Documentation site: https://dhis2.github.io/climate-tools
+
+---
 
 ## Installation
 
-To install the climate tools Python library, and its associated commandline utilities, you need to install the `climtools` Python package. 
+The Python library and command-line utilities are distributed under the package name **`dhis2eo`**. 
 
-Until we release an official PyPI package, for now you can simply install it from the github repository:
+To install the climate tools Python library, and its associated commandline utilities, you need to install the `dhis2eo` Python package. 
 
-        $ pip install git+https://github.com/dhis2/climate-tools
+You can install it directly from source (development mode):
 
-Or if you're a developer, install your local repository in editable mode, so that local changes get reflected during import:
-
+        $ git clone https://github.com/dhis2/climate-tools.git
+        $ cd climate-tools
         $ pip install -e .
 
-After this, you should be able to import `climtools` inside a Python session:
+Once installed, you can use both:
 
-        >>> import climtools
-        
-Installation will also make available the Climtools CLI from the commandline: 
+- the Python library:
 
-        $ climtools
+    ```python
+    import dhis2
+    ```
+
+- the CLI tool:
+
+        $ dhis2eo --help
 
 ## Documentation
 
