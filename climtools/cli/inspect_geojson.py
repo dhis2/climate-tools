@@ -1,8 +1,16 @@
 import os
 import sys
 import json
+import typer
 
-def main(geojson_file):
+app = typer.Typer()
+
+@app.command()
+def main(
+    geojson_file
+    ):
+    '''Inspects the contents of a GeoJSON file.'''
+
     print(f"File: {os.path.abspath(geojson_file)}")
 
     # Load your GeoJSON file
@@ -25,6 +33,8 @@ def main(geojson_file):
         print('Properties:')
         print(json.dumps(feat['properties'], indent=2))
 
-if __name__ == '__main__':
-    geojson_file = sys.argv[1]
-    main(geojson_file)
+def register_parser(subparsers):
+    description = '''Inspects and reports the contents of a GeoJSON file.'''
+    parser = subparsers.add_parser("inspect-geojson", help=description)
+    parser.add_argument("geojson_file", help="Path to the GeoJSON File")
+    #parser.set_defaults(func=lambda args: main(args.input, args.output))

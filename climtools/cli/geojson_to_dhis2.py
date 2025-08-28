@@ -1,8 +1,3 @@
-'''
-Commandline tool for converting a geojson file to json metadata file and geometry geojson file
-that can be used to easily setup a new orgunit hierarchy using the DHIS2 Import page. 
-'''
-
 import os
 import sys
 import json
@@ -11,7 +6,11 @@ import random
 from datetime import date
 from pathlib import Path
 
-def main(geojson_file, country, name_field):
+def main(
+    geojson_file, 
+    country, 
+    name_field
+    ):    
     print(f'Converting geojson file {geojson_file} to dhis2 compatible import files')
     org_units = []
 
@@ -95,9 +94,11 @@ def main(geojson_file, country, name_field):
 
     print(f"DHIS2 compatible geojson saved to {output_base_path}_dhis2.geojson")
 
-
-if __name__ == '__main__':
-    geojson_file = sys.argv[1]
-    country_name = sys.argv[2]
-    name_field = sys.argv[3]
-    main(geojson_file, country_name, name_field)
+def register_parser(subparsers):
+    description = '''Converts a geojson file to a json metadata file and a geometry geojson file
+    that can be used to easily setup a new orgunit hierarchy using the DHIS2 Import page.'''
+    parser = subparsers.add_parser("geojson-to-dhis2", help=description)
+    parser.add_argument("geojson_file", help="Path to the GeoJSON File")
+    parser.add_argument("country", help="Name to use for the parent orgunit, typically a country name")
+    parser.add_argument("name_field", help="Field that contains the name of each orgunit")
+    #parser.set_defaults(func=lambda args: main(args.input, args.output))
