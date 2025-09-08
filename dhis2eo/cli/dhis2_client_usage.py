@@ -1,4 +1,4 @@
-# use_dhis2_client.py
+# See dhis2_client documentation for more details:
 import argparse, asyncio
 from dhis2_client import DHIS2AsyncClient, Settings
 
