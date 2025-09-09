@@ -11,7 +11,7 @@ requires-python = ">=3.8"
 dependencies = [
     "requests",
     "pyshp==2.*",
-    "dhis2-client[cli] @ git+https://github.com/dhis2/dhis2-python-client.git@v0.2.0",
+    "dhis2-client[cli] @ git+https://github.com/dhis2/dhis2-python-client.git@v0.2.1",
 ]
 
 [project.scripts]
