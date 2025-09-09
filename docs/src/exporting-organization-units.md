@@ -1,6 +1,6 @@
 ---
-title: Organization unit geometries
-short_title: Org unit geometries
+title: Exporting organization unit geometries
+short_title: Export org unit geometries
 ---
 
 To aggregate climate, weather and environmental data to organization units

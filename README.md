@@ -1,8 +1,49 @@
-Site: https://dhis2.github.io/climate-tools
+# Climate Tools
 
-Based on Jupyter Book v2: https://next.jupyterbook.org
+**Climate Tools** is the umbrella project for working with DHIS2 and environmental / climate-related data.  
+It includes online documentation, guides, tutorials, and the `dhis2eo` Python package and CLI tool.
 
-## Run locally
+Documentation site: https://dhis2.github.io/climate-tools
 
-pip install --pre "jupyter-book==2.\*"
-jupyter book start
+---
+
+## Installation
+
+The Python library and command-line utilities are distributed under the package name **`dhis2eo`**. 
+
+To install the climate tools Python library, and its associated commandline utilities, you need to install the `dhis2eo` Python package. 
+
+You can install it directly from source (development mode):
+
+        $ git clone https://github.com/dhis2/climate-tools.git
+        $ cd climate-tools
+        $ pip install -e .
+
+Once installed, you can use both:
+
+- the Python library:
+
+    ```python
+    import dhis2eo
+    ```
+
+- the CLI tool:
+
+        $ dhis2eo --help
+
+## Documentation
+
+The climate tools documentation also includes a number of guides and examples for common climate operations and workflows, available at https://dhis2.github.io/climate-tools. This online documentation is built using Jupyter Book (https://next.jupyterbook.org). The site is automatically updated by making changes to the `docs/src` folder and pushing to the `main` branch. 
+
+To preview the documentation locally you need to install Jupyter Book v2: 
+
+        $ pip install --pre "jupyter-book==2.\*"
+
+After installing the dependencies you can navigate to the `docs` folder and run the web server locally:
+
+        $ cd docs
+        $ jupyter book start
+
+You can then browse and preview your local changes:
+
+- Visit localhost:3000 in your browser
