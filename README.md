@@ -24,7 +24,7 @@ Once installed, you can use both:
 - the Python library:
 
     ```python
-    import dhis2
+    import dhis2eo
     ```
 
 - the CLI tool:
@@ -33,14 +33,15 @@ Once installed, you can use both:
 
 ## Documentation
 
-The climate tools documentation also includes a number of guides and examples for common climate operations and workflows, available at https://dhis2.github.io/climate-tools. This online documentation is built using the MyST web publishing ecosystem (https://mystmd.org/guide/quickstart) and Jupyter notebooks (https://next.jupyterbook.org). The site is automatically updated by making changes to the `docs` folder and pushing to the `main` branch. 
+The climate tools documentation also includes a number of guides and examples for common climate operations and workflows, available at https://dhis2.github.io/climate-tools. This online documentation is built using Jupyter Book (https://next.jupyterbook.org). The site is automatically updated by making changes to the `docs/src` folder and pushing to the `main` branch. 
 
-To preview the documentation locally you need to have `Node.js` (https://nodejs.org) installed. Additionally you need to install Jupyter v2: 
+To preview the documentation locally you need to install Jupyter Book v2: 
 
         $ pip install --pre "jupyter-book==2.\*"
 
-After installing the dependencies you can run the web server locally:
+After installing the dependencies you can navigate to the `docs` folder and run the web server locally:
 
+        $ cd docs
         $ jupyter book start
 
 You can then browse and preview your local changes:
