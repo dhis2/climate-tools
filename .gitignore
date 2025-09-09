@@ -7,3 +7,6 @@ __pycache__
 _build
 
 test/data/
+
+sri-lanka-provinces.geojson
+pm_final_srilanka_linearp.nc
