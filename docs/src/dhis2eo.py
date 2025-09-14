@@ -17,10 +17,10 @@ def data_array_to_dhis2_json(data_array, data_element_id, org_unit_dim, period_d
   data = []
   for item in data_array:     
     data.append({
-      'dataElement': data_element_id,
+      # 'dataElement': data_element_id,
       'orgUnit': get_org_unit_from_array_item(item, org_unit_dim),
       'period': get_period_from_array_item(item, period_dim),  
       'value': get_value_from_array_item(item),
     })
 
-  return json.dumps({ "dataValues": data })
+  return json.dumps({ 'dataElement': data_element_id, "dataValues": data })
