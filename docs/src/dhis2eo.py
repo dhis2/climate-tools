@@ -1,13 +1,13 @@
 import json
 from datetime import datetime
 
-def get_org_unit_from_array_item(item, org_unit_dim = 'orgUnit'):
+def get_org_unit_from_array_item(item, org_unit_dim = 'id'):
   return item.coords.get(org_unit_dim).data.item(0);  
 
 # TODO: handle different period formats and types
-def get_period_from_array_item(item, period_dim = 'period'):
+def get_period_from_array_item(item, period_dim = 'valid_time'):
   # 1e+9 converts from nanoseconds to seconds 
-  return datetime.fromtimestamp(item.coords.get(period_dim).item(0) / 1e+9).strftime('%Y-%m-%d')
+  return datetime.fromtimestamp(item.coords.get(period_dim).item(0) / 1e+9).strftime('%Y%m%d')
 
 def get_value_from_array_item(item):
   return str(item.data.item(0))
