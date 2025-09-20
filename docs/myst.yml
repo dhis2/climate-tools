@@ -19,12 +19,18 @@ project:
       children:
         - file: getting-started/installation.md
         - file: getting-started/quickstart.md
+    - title: Tools
+      file: tools/intro.md
+      children:
+        - file: tools/earthkit.md
+        - file: tools/dhis2eo.md
+        - file: tools/dhis2-python-client.md
     - title: Getting data
       file: getting-data/intro.md
       children:
         - file: getting-data/climate-data-store.md
         - file: getting-data/enacts.md
-    - title: Organization units
+    - title: Organisation units
       file: org-units/intro.md
       children:
         - file: org-units/download-maps-app.md
@@ -36,6 +42,7 @@ project:
         - file: aggregation/earthkit-netcdf.ipynb
     - title: Data visualization
       file: visualization/intro.md
+    - file: contribute.md
     - file: glossary.md
     - file: resources.md
 site:

@@ -3,7 +3,7 @@ title: Importing org units to DHIS2
 short_title: Import to DHIS2
 ---
 
-Sometimes you don't have access to a desired DHIS2 instance or need to explore different definitions of org unit boundaries in DHIS2, e.g. for testing or debugging purposes. This tutorial shows you how to create a new organization unit tree in DHIS2 (possibly for multiple countries) by using some of the provided commandline utilities.
+Sometimes you don't have access to a desired DHIS2 instance or need to explore different definitions of org unit boundaries in DHIS2, e.g. for testing or debugging purposes. This tutorial shows you how to create a new organisation unit tree in DHIS2 (possibly for multiple countries) by using some of the provided commandline utilities.
 
 ## Getting your boundary data
 

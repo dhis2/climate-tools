@@ -12,6 +12,9 @@ GeoJSON
 NetCDF
 : A widely used file format for climate and weather data.
 
+Organisation unit
+: Used in DHIS2 to represent the geographic location of the data. An org unit can either be an administrative unit representing a geographical area (e.g. a health district), or the location of a health facility. [More information](https://docs.dhis2.org/en/implement/database-design/organisation-units.html)
+
 Xarray
 : A python library which simplifies working with labelled multi-dimension arrays, with a similar data model to NetCDF. [More information](https://xarray.dev/)
 :::
