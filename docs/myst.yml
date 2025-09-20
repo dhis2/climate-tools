@@ -36,6 +36,7 @@ project:
         - file: aggregation/earthkit-netcdf.ipynb
     - title: Data visualization
       file: visualization/intro.md
+    - file: contribute.md
     - file: glossary.md
     - file: resources.md
 site:
