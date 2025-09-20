@@ -12,7 +12,6 @@ Organisation units can easily be downloaded in GeoJSON format from DHIS2 Maps:
 The organisation units will be downloaded as a GeoJSON file.
 
 ```{figure} images/maps-geojson-download-1.png
-:alt: Sunset at the beach
 :align: left
 :width: 60%
 

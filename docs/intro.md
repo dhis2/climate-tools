@@ -3,6 +3,10 @@
 DHIS2 Climate Tools contains open source libraries and workflows to access, process and upload
 climate, weather and environmental data to [DHIS2](https://dhis2.org/) and the [Chap Modeling Platform](https://dhis2-chap.github.io/chap-site/).
 
+```{figure} images/climate-tools.jpg
+:align: left
+```
+
 The tools are based on the [Python](https://www.python.org/) programming language and ecosystem. Python is the leading programming language for geospatial analysis, offering a rich ecosystem of libraries and tools that we can build on. It allows us to make complex spatial operations accessible to both beginners and experts.
 
 DHIS2 Climate Tools has two primary users:

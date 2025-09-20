@@ -19,6 +19,12 @@ project:
       children:
         - file: getting-started/installation.md
         - file: getting-started/quickstart.md
+    - title: Tools
+      file: tools/intro.md
+      children:
+        - file: tools/earthkit.md
+        - file: tools/dhis2eo.md
+        - file: tools/dhis2-python-client.md
     - title: Getting data
       file: getting-data/intro.md
       children:
