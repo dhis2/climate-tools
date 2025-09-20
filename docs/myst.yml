@@ -24,7 +24,7 @@ project:
       children:
         - file: getting-data/climate-data-store.md
         - file: getting-data/enacts.md
-    - title: Organization units
+    - title: Organisation units
       file: org-units/intro.md
       children:
         - file: org-units/download-maps-app.md
