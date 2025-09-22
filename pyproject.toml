@@ -11,7 +11,7 @@ requires-python = ">=3.8"
 dependencies = [
     "earthkit-data[netcdf,geotiff,geopandas,projection]",
     "earthkit-transforms",
-    "dhis2-client[cli] @ git+https://github.com/dhis2/dhis2-python-client.git@v0.2.1",
+    "dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@v0.1.0",
 ]
 
 [project.scripts]
