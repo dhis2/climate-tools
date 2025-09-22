@@ -3,16 +3,15 @@ title: Download org units from DHIS2 Maps
 short_title: Download from DHIS2 Maps
 ---
 
-Organization units can easily be downloaded in GeoJSON format from DHIS2 Maps:
+Organisation units can easily be downloaded in GeoJSON format from DHIS2 Maps:
 
 1. Open DHIS2 Maps
 2. Add a new Org units layer
 3. Select "Download data" under the "More actions" menu
 
-The organization units will be downloaded as a GeoJSON file.
+The organisation units will be downloaded as a GeoJSON file.
 
 ```{figure} images/maps-geojson-download-1.png
-:alt: Sunset at the beach
 :align: left
 :width: 60%
 
