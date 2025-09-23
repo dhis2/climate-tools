@@ -21,6 +21,8 @@ After installation, you can navigate to the folder where you want to store your 
 
 You can then visit http://localhost:8888 to view, create, and run Jupyter notebooks in the selected workspace. 
 
+**Note**: It's important that `jupyter` and `dhis2eo` are installed to the same virtual environment (e.g. in `venv` or `conda`), and that you activate this environment before you run `jupyter notebook`. This will ensure that Jupyter uses the correct Python version with all the necessary dependencies installed. 
+
 ### Example usage
 
 For instance, if you start the Jupyter server in this repository folder and navigate to the `docs/aggregation` folder you'll find the `earthkit-netcdf.ipynb` file: 
@@ -31,6 +33,8 @@ Click it to open the notebook:
 
 ![Screenshot of a Jupyter Notebook](./images/jupyter-notebook.png)
 
-For instance, we recommend running the notebook step by step, which you can do by clicking each individual code cell and pressing control-enter to run it. Then you'll see the results of each code cell as you go through the document. 
+We recommend running the notebook step by step, which you can do by clicking each individual code cell and pressing control-enter to run it. Then you'll see the results of each code cell as you go through the document. 
 
-For more information on how to use Jupyter Notebooks you can check out this tutorial: https://www.dataquest.io/blog/jupyter-notebook-tutorial/. 
+For more information on how to use Jupyter Notebooks you can check out this tutorial: 
+
+- https://www.dataquest.io/blog/jupyter-notebook-tutorial/. 
