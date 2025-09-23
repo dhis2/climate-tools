@@ -28,7 +28,7 @@ project:
     - title: Getting data
       file: getting-data/intro.md
       children:
-        - file: getting-data/climate-data-store.md
+        - file: getting-data/climate-data-store.ipynb
         - file: getting-data/enacts.md
     - title: Import data to DHIS2
       file: import-data/intro.md
