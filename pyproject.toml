@@ -9,12 +9,13 @@ description = "DHIS2 Earth Observation Toolkit"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "requests",
-    "pyshp==2.*",
+    "earthkit-data[netcdf,geotiff,geopandas,projection]",
+    "earthkit-transforms",
+    "dhis2-client[cli] @ git+https://github.com/dhis2/dhis2-python-client.git@v0.2.1",
 ]
 
 [project.scripts]
 climtools = "dhis2eo.cli.__main__:main"
 
-[tool.setuptools.packages.find]
-where = ["dhis2eo"]
+[tool.setuptools]
+packages = ["dhis2eo"]

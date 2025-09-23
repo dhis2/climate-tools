@@ -1,3 +1,4 @@
+'''Main entrypoint to the cli client which registers the various sub commands'''
 import sys
 import argparse
 from . import geojson_inspect, geojson_to_dhis2

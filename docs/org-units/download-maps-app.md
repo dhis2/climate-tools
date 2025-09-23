@@ -1,24 +1,17 @@
 ---
-title: Exporting organization unit geometries
-short_title: Export org unit geometries
+title: Download org units from DHIS2 Maps
+short_title: Download from DHIS2 Maps
 ---
 
-To aggregate climate, weather and environmental data to organization units
-we need to have the geometries (polygons or points). Org units geometries
-can be downloaded in the DHIS2 Maps app, or through the DHIS2 Web API.
-
-## DHIS2 Maps
-
-Org units can easily be downloaded from DHIS2 Maps:
+Organisation units can easily be downloaded in GeoJSON format from DHIS2 Maps:
 
 1. Open DHIS2 Maps
 2. Add a new Org units layer
 3. Select "Download data" under the "More actions" menu
 
-The organization units will be downloaded as a GeoJSON file.
+The organisation units will be downloaded as a GeoJSON file.
 
 ```{figure} images/maps-geojson-download-1.png
-:alt: Sunset at the beach
 :align: left
 :width: 60%
 
@@ -47,6 +40,7 @@ that you want to download the data. The org units are downloaded as GeoJSON
 with the file name "organisation units.geojson". Rename the file if you want
 to describe what it contains (e.g. "sierra-leone-districts.geojson").
 ```
+<<<<<<< HEAD:docs/src/exporting-organization-units.md
 
 ## DHIS2 Web API
 
@@ -155,3 +149,5 @@ Result can be saved as a .geojson file and latter imported to a DHIS2 instance v
 ```{figure} images/geometry-import-app.png
 :align: left
 ```
+=======
+>>>>>>> main:docs/org-units/download-maps-app.md
