@@ -18,7 +18,7 @@ project:
       file: getting-started/intro.md
       children:
         - file: getting-started/installation.md
-        - file: getting-started/quickstart.md
+        - file: getting-started/jupyter.md
     - title: Tools
       file: tools/intro.md
       children:
