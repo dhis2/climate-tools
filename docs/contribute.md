@@ -71,4 +71,4 @@ Here's a step-by-step guide:
     - Visit localhost:3000 to preview your local changes. 
 
 4. Finally, push your changes and make a PR to the `main` branch. 
-    - Once the PR is accepted, the site at https://dhis2.github.io will be automatically updated. 
+    - Once the PR is accepted, the site at https://dhis2.github.io/climate-tools/ will be automatically updated. 
