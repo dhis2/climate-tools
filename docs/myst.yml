@@ -39,7 +39,7 @@ project:
       file: org-units/intro.md
       children:
         - file: org-units/download-maps-app.md
-        - file: org-units/getting-web-api.md
+        - file: org-units/getting-web-api.ipynb
         - file: org-units/import-to-dhis2.md
     - title: Data aggregation
       file: aggregation/intro.md
