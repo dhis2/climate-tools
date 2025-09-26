@@ -5,12 +5,7 @@ short_title: Import to DHIS2
 
 Sometimes you don't have access to a desired DHIS2 instance or need to explore different definitions of org unit boundaries in DHIS2, e.g. for testing or debugging purposes. This tutorial shows you how to create a new organisation unit tree in DHIS2 (possibly for multiple countries) by using some of the provided commandline utilities.
 
-## Getting your boundary data
-
-First you need a GeoJSON file containing the administrative boundaries for some country. If you don't already have this,
-you can easily fetch some from https://www.geoboundaries.org/countryDownloads.html and unzip its contents. The GeoJSON must be for a single adminstrative level, and will all be linked to a single parent country.
-
-![GeoBoundaries screenshot](images/geoboundaries.png)
+Here we assume that you already have a GeoJSON file of your organisation unit boundaries. 
 
 ## Converting your boundary data to DHIS2 format
 
