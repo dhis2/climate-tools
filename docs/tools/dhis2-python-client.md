@@ -25,15 +25,12 @@ Metadata management adds another hurdle: creating or updating data elements, dat
 
 ## Getting started
 
-The library is available from the [DHIS2 Python Client GitHub repository](https://github.com/dhis2/dhis2-python-client).
+The library is packaged as part of the `climate-tools` ecosystem but if you want to use it outside the `cliamte-tools`, installation instructions and other details are available from the [DHIS2 Python Client GitHub repository](https://github.com/dhis2/dhis2-python-client).
 
-It requires **Python 3.10+** and access to a DHIS2 server. Installation is currently from source:
+Below are some examples using the library:-
 
-```bash
-git clone https://github.com/dhis2/dhis2-python-client.git
-cd dhis2-python-client
-pip install -e .
-```
+- [Working with organisation units](../org-units/getting-web-api.ipynb)
+- ...
 
 ---
 
