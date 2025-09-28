@@ -44,7 +44,7 @@ project:
     - title: Data aggregation
       file: aggregation/intro.md
       children:
-        - file: aggregation/earthkit-netcdf.ipynb
+        - file: aggregation/temperature.ipynb
     - title: Data visualization
       file: visualization/intro.md
       children:
