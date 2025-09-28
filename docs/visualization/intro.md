@@ -8,4 +8,4 @@ Visualizing data on geographic maps is essential when working with climate data.
 - Review the results of data processing
 - Share findings with stakeholders
 
-These pages provide recommended practices for visualizing and mapping common climate data sources.
+These pages provide good practices for visualizing and mapping common climate data sources.
