@@ -17,7 +17,7 @@ def parse_period(period_value):
 def df_to_dhis2_json(df, data_element_id, org_unit_col, period_col, value_col):
     '''Translates a pandas.DataFrame to JSON format used by DHIS2 Web API.'''
     # subset the df
-    df_subset = df[[org_unit_col, period_col, value_col]]
+    df_subset = df[[org_unit_col, period_col, value_col]].copy()
 
     # remap column names
     remap = {
