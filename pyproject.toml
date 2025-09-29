@@ -18,5 +18,6 @@ dependencies = [
 [project.scripts]
 climtools = "dhis2eo.cli.__main__:main"
 
-[tool.setuptools]
-packages = ["dhis2eo"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dhis2eo*"]
