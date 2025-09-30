@@ -18,7 +18,7 @@ More complete API Reference Documentation will be added in the future.
 
 See the following examples that use the `dhis2eo` library: 
 
-- [Aggregate Data from NetCDF](../aggregation/earthkit-netcdf.ipynb)
+- [Aggregate Temperature Data](../aggregation/temperature.ipynb)
 
 ## Using dhis2eo on the commandline
 
