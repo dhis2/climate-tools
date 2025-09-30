@@ -1,6 +1,6 @@
 # dhis2eo
 
-Our utility library for working with earth observation data and data transformation. 
+`dhis2eo` stands for **DHIS2 Earth Observation** and is our utility library for working with earth observation data and data transformation. 
 
 For most of the data processing and handling, we currently recommend using the `earthkit` package directly. 
 
@@ -28,6 +28,4 @@ The available CLI commands are defined inside the `dhis2eo.cli` module.
 
 ### Examples
 
-The following examples showcase the current uses of the `dhis2eo` CLI:
-
-- [Importing org units to DHIS2](../org-units/import-to-dhis2.md)
+Coming soon! 
