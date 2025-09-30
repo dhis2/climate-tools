@@ -45,6 +45,10 @@ project:
       file: aggregation/intro.md
       children:
         - file: aggregation/temperature.ipynb
+    - title: Data analysis
+      file: analysis/intro.md
+      children:
+        - file: analysis/climate-normals.ipynb
     - title: Data visualization
       file: visualization/intro.md
       children:
