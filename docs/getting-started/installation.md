@@ -4,6 +4,8 @@ title: Installation
 
 The Python library and command-line utilities are distributed under the package name **`dhis2eo`**. 
 
+The library has been developed and tested on **Python 3.11**. We recommend using this version for best compatibility, though other versions may also work. 
+
 To install the climate tools Python library, and its associated commandline utilities, you need to install the `dhis2eo` Python package. 
 
 Until we release a stable version, you can install it directly from the latest Github repository:

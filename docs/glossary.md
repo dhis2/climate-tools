@@ -3,6 +3,9 @@ title: Glossary
 ---
 
 :::{glossary}
+Climate normals
+: Climate normals or climatological normals are 30-year averages of weather variables like temperature and precipitation for a specific location and time of year, providing a stable reference point for comparing current weather to expected conditions and monitoring climate change. The current base period recommended by the World Meteorological Organization (WMO) is 1991–2020. [More information](https://community.wmo.int/en/activity-areas/climate-services/climate-products-and-initiatives/wmo-climatological-normals)
+
 earthkit
 : An open-source Python project led by ECMWF, providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more. [More information](https://ecmwf.github.io/earthkit-website/)
 

@@ -28,9 +28,12 @@ Once installed, you can verify that they installed correctly:
 
 ## Code contributions
 
-- If you have code contributions, make these inside the relevant parts of the `dhis2eo` folder. 
+If you have code contributions:
+
+- Fork or create a new branch of the [Climate Tools Github repo](https://github.com/dhis2/climate-tools).
+- Make your changes inside the relevant parts of the `dhis2eo` folder. 
 - If adding new functionality, add a Jupyter Notebook file that demonstrates how to use the new code (see next section on [Jupyter Notebooks](#notebook-contributions)). 
-- Push your changes and make a PR to the `main` branch. 
+- Push your changes and make a **Pull Request** to the `main` branch. 
 
 ## Notebook contributions
 
@@ -38,13 +41,15 @@ We also welcome user-contributions from practitioners and others who have develo
 
 Here's a step-by-step guide:
 
-1. Write your Jupyter Notebook. 
+1. Create your own fork of the latest [Climate Tools Github repo](https://github.com/dhis2/climate-tools).
+
+2. Write your Jupyter Notebook. 
     - See our guide for [Getting started with Jupyter](getting-started/jupyter.md). 
     - Place your notebook file in the relevant section of the documentation, e.g. `docs/aggregation`.
     - Make sure that all relevant data files are added to the `docs/data` folder, or retrieved from online sources. 
     - Run all cells in your notebook before submitting to verify that everything works and the outputs are up-to-date. 
 
-2. Add your notebook to the documentation page tree. 
+3. Add your notebook to the documentation page tree. 
     - Open the file `docs/myst.yml` - this defines the structure of the online documentation and the pages shown in the side menu. 
     - Add an entry to your notebook in the relevant section (alternatively, suggest a new section):
 
@@ -54,7 +59,7 @@ Here's a step-by-step guide:
               - file: aggregation/your-custom-notebook.ipynb
         ```
 
-3. Preview the updated website locally.
+4. Preview the updated website locally.
     - The online documentation is built using Jupyter Book (https://next.jupyterbook.org). 
     - To preview the documentation locally you need to install Jupyter Book v2: 
 
@@ -70,5 +75,5 @@ Here's a step-by-step guide:
 
     - Visit localhost:3000 to preview your local changes. 
 
-4. Finally, push your changes and make a PR to the `main` branch. 
+5. Finally, push your changes and make a **Pull Request** back to the [Climate Tools Github repo](https://github.com/dhis2/climate-tools). 
     - Once the PR is accepted, the site at https://dhis2.github.io/climate-tools/ will be automatically updated. 

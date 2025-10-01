@@ -25,30 +25,32 @@ project:
         - file: tools/earthkit.md
         - file: tools/dhis2eo.md
         - file: tools/dhis2-python-client.md
-    - title: Getting data
-      file: getting-data/intro.md
-      children:
-        - file: getting-data/climate-data-store.ipynb
-        - file: getting-data/enacts.md
-    - title: Import data to DHIS2
-      file: import-data/intro.md
-      children:
-        - file: import-data/dhis2_data_import.ipynb
-        - file: import-data/using-python-client.md
     - title: Organisation units
       file: org-units/intro.md
       children:
         - file: org-units/download-maps-app.md
         - file: org-units/getting-web-api.ipynb
-        - file: org-units/import-to-dhis2.md
+    - title: Getting data
+      file: getting-data/intro.md
+      children:
+        - file: getting-data/climate-data-store.ipynb
     - title: Data aggregation
       file: aggregation/intro.md
       children:
-        - file: aggregation/earthkit-netcdf.ipynb
+        - file: aggregation/temperature.ipynb
     - title: Data visualization
       file: visualization/intro.md
       children:
         - file: visualization/temperature.ipynb
+    - title: Data analysis
+      file: analysis/intro.md
+      children:
+        - file: analysis/climate-normals.ipynb
+    - title: Import data to DHIS2
+      file: import-data/intro.md
+      children:
+        - file: import-data/data-elements.md
+        - file: import-data/using-python-client.md
     - file: contribute.md
     - file: glossary.md
     - file: resources.md
