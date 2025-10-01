@@ -50,7 +50,6 @@ project:
       file: import-data/intro.md
       children:
         - file: import-data/using-python-client.ipynb
-        - file: import-data/data-elements.md
     - file: contribute.md
     - file: glossary.md
     - file: resources.md
