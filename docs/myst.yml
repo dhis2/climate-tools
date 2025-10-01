@@ -49,8 +49,7 @@ project:
     - title: Import data to DHIS2
       file: import-data/intro.md
       children:
-        - file: import-data/data-elements.md
-        - file: import-data/using-python-client.md
+        - file: import-data/using-python-client.ipynb
     - file: contribute.md
     - file: glossary.md
     - file: resources.md
