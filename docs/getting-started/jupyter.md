@@ -29,7 +29,7 @@ Alternatively you can download the latest code as a zipfile from this link: http
 Start the Jupyter server at the root of the downloaded repository folder, which will give you an overview of the folder contents.
 
         $ cd path/to/local/repo
-        $ jupyter notebook
+        $ jupyter lab
 
 **Note**: It's important that `jupyter` and `dhis2eo` are installed to the same virtual environment (e.g. in `venv` or `conda`), and that you activate this environment before you run `jupyter notebook`. This will ensure that Jupyter uses the correct Python version with all the necessary dependencies installed. 
 
@@ -37,7 +37,7 @@ Start the Jupyter server at the root of the downloaded repository folder, which 
 
 Visit http://localhost:8888, which will give you an overview of the folder contents. 
 
-Browse the `docs` folder and look for files with `.ipynb` extensions. For instance, if you navigate to the `docs/aggregation` folder you'll find the `earthkit-netcdf.ipynb` file: 
+In the left-hand menu, browse the `docs` folder and look for files with `.ipynb` extensions: 
 
 ![Screenshot of browsing files in Jupyter](./images/jupyter-browse.png)
 
@@ -45,7 +45,7 @@ Browse the `docs` folder and look for files with `.ipynb` extensions. For instan
 
 ## Open and run a notebook
 
-Click one of the notebooks to open it: 
+For instance, if you navigate to the `docs/aggregation` folder you'll find the `temperature.ipynb` file: 
 
 ![Screenshot of a Jupyter Notebook](./images/jupyter-notebook.png)
 
