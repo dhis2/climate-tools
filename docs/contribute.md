@@ -10,21 +10,9 @@ If you're a developer who wants to contribute to Climate Tools, we recommend fet
         $ cd climate-tools
         $ pip install -e .
 
-Once installed, you can verify that they installed correctly:
+Once installed, you can verify that it installed correctly in a Python session:
 
-- the Python library:
-
-    ```python
-    import dhis2eo
-    ```
-
-- the CLI tool:
-
-        $ dhis2eo --help
-
-  If you're on Windows, the above command may not work due to a bug with `pip install -e`. Instead try:
-
-        $ python -m dhis2eo --help
+        >>> import dhis2eo
 
 ## Code contributions
 

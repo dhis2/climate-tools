@@ -19,13 +19,3 @@ More complete API Reference Documentation will be added in the future.
 See the following examples that use the `dhis2eo` library: 
 
 - [Aggregate Temperature Data](../aggregation/temperature.ipynb)
-
-## Using dhis2eo on the commandline
-
-The Python library also includes a set of commandline (CLI) tools that are made available during install. 
-These are typically shorter one-time tasks that aren't necessarily needed in an automated script. 
-The available CLI commands are defined inside the `dhis2eo.cli` module. 
-
-### Examples
-
-Coming soon! 

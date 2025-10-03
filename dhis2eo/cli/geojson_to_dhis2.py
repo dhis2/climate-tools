@@ -5,12 +5,15 @@ import string
 import random
 from datetime import date
 from pathlib import Path
+import geopandas as gpd
+
+from ..integrations.geopandas import geodataframe_to_dhis2_org_units
 
 def main(
     geojson_file, 
     country, 
     name_field
-    ):    
+    ):
     print(f'Converting geojson file {geojson_file} to dhis2 compatible import files')
     org_units = []
 
@@ -20,58 +23,10 @@ def main(
     output_base_path = os.path.abspath(output_base_file)
 
     # Load your GeoJSON file
-    with open(geojson_file, "r") as f:
-        geojson = json.load(f)
+    gdf = gpd.read_file(geojson_file)
 
-    # Generate UIDs
-    def generate_uid():
-        letters = string.ascii_letters  # A-Z, a-z
-        chars = string.ascii_letters + string.digits  # A-Z, a-z, 0-9
-        return random.choice(letters).upper() + ''.join(random.choices(chars, k=10))
-
-    # Create top-level country org unit
-    props = geojson['features'][0]['properties']
-    country_uid = generate_uid()
-    #country, country_code = props['COUNTRY'], props['GID_0']
-    country_org_unit = {
-        "id": country_uid,
-        "name": country,
-        "shortName": country,
-        #"code": country_code,
-        "openingDate": str(date.today()),
-        "level": 1,
-        #"featureType": "NONE"
-    }
-    org_units.append(country_org_unit)
-
-    # Now process each region feature
-    for feature in geojson["features"]:
-        props = feature["properties"]
-        geom = feature["geometry"]
-
-        name = props.get(name_field)
-        #code = props.get(code_field)
-        short_name = name[:50] if name else "Unnamed"
-        
-        org_unit = {
-            "id": generate_uid(),
-            "name": name,
-            "shortName": short_name,
-            #"code": code,
-            "openingDate": str(date.today()),
-            "level": 2,
-            "parent": {
-                "id": country_uid
-            },
-            #"featureType": "MULTI_POLYGON" if geom["type"]=="MultiPolygon" else geom["type"].upper(),
-            #"coordinates": geom["coordinates"]
-        }
-        org_units.append(org_unit)
-
-    # Wrap in DHIS2 metadata structure
-    dhis2_metadata = {
-        "organisationUnits": org_units
-    }
+    # Convert to dhis2
+    dhis2_metadata, dhis2_geojson = geodataframe_to_dhis2_org_units(gdf, country, name_field)
 
     # Save to JSON
     with open(f"{output_base_path}_dhis2.json", "w") as f:
@@ -79,18 +34,9 @@ def main(
 
     print(f"DHIS2 metadata saved to '{output_base_path}_dhis2.json'")
 
-    # Save to GeoJSON that can be used for geometry import (subunits only)
-    geojson_new = geojson
-    org_sub_units = org_units[1:] # slightly hacky, skips the country which is added as the first org unit above
-    for feat,org_unit in zip(geojson['features'], org_sub_units):
-        #print(str(feat)[:100], 'vs', str(org_unit)[:100])
-        feat['id'] = org_unit['id']
-        org_unit.pop('featureType', None)
-        org_unit.pop('coordinates', None)
-        feat['properties'] = org_unit
-
+    # Save to GeoJSON that can be used for geometry import (subunits only, not country geometry)
     with open(f"{output_base_path}_dhis2.geojson", "w") as f:
-        json.dump(geojson_new, f, indent=2)
+        json.dump(dhis2_geojson, f, indent=2)
 
     print(f"DHIS2 compatible geojson saved to {output_base_path}_dhis2.geojson")
 

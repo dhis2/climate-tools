@@ -2,11 +2,11 @@
 title: Installation
 ---
 
-The Python library and command-line utilities are distributed under the package name **`dhis2eo`**. 
+The Climate Tools Python library are distributed under the package name **`dhis2eo`**. 
 
 The library has been developed and tested on **Python 3.11**. We recommend using this version for best compatibility, though other versions may also work. 
 
-To install the climate tools Python library, and its associated commandline utilities, you need to install the `dhis2eo` Python package. 
+To install the Climate Tools Python library you need to install the `dhis2eo` Python package. 
 
 Until we release a stable version, you can install it directly from the latest Github repository:
 
@@ -14,15 +14,6 @@ Until we release a stable version, you can install it directly from the latest G
 
 The installation includes all necessary dependencies, including relevant components from [earthkit](../tools/earthkit.md) and [dhis2-python-client](../tools/dhis2-python-client.md).
 
-Once installed, you can verify that they installed correctly:
+Once installed, you can verify that it installed correctly in a Python session:
 
-- the Python library:
-
-    ```python
-    import dhis2eo
-    ```
-
-- the CLI tool:
-
-        $ dhis2eo --help
-
+        >>> import dhis2eo
