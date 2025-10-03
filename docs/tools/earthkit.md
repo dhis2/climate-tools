@@ -1,6 +1,6 @@
 # earthkit
 
-[earthkit](https://ecmwf.github.io/earthkit-website/) is a new open-source Python project led by the [European Centre for Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/), providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more.
+[Earthkit](https://ecmwf.github.io/earthkit-website/) is a new open-source Python project led by the [European Centre for Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/), providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more.
 
 earthkit offers multiple interoperable software components built on top of well-established open-source Python libraries like numpy, pandas and matplotlib.
 
