@@ -9,6 +9,12 @@ Climate Information for Public Health Action
 Introduction to GIS Programming
 : A practical Python guide to open source geospatial tools by _Qiusheng Wu_. [Get the book](https://gispro.gishub.org/)
 
+Introduction to Python for Geographic Data Analysis
+: Introduces the basics of Python programming and geographic data analysis for all “geo-minded” people by Henrikki Tenkanen, Vuokko Heikinheimo & David Whipp. [Read the free open-source book](https://pythongis.org/)
+
+GeoComputation with Python
+: Reproducible geographic data analysis with open source software by Michael Dorman, Anita Graser, Jakub Nowosad, Robin Lovelace. [Read the free open-source book](https://py.geocompx.org/)
+
 Data Analytics for Climate and Health
 : This course from introduces key concepts and methods for applying data analytics to the intersection of climate and public health. [Course at data.org](https://data.org/resources/data-analytics-for-climate-and-health/)
 
