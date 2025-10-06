@@ -1,3 +1,4 @@
+.vscode/
 .DS_Store
 .ipynb_checkpoints
 __pycache__
@@ -5,8 +6,17 @@ __pycache__
 
 # MyST build outputs
 _build
+build/
+dist/
 
 test/data/
 
+# Sri Lanka data files
 sri-lanka-provinces.geojson
 pm_final_srilanka_linearp.nc
+
+# Virtual environments
+.venv/
+.env/
+docs/src/data/pm_final_srilanka_linearp.nc
+docs/src/data/sri-lanka-provinces.geojson
