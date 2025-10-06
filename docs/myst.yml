@@ -45,7 +45,7 @@ project:
     - title: Data aggregation
       file: aggregation/intro.md
       children:
-        - file: aggregation/temperature.ipynb
+        - file: aggregation/org-unit-aggregation.ipynb
     - title: Import data to DHIS2
       file: import-data/intro.md
       children:
