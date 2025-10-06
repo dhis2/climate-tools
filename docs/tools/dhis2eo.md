@@ -18,4 +18,4 @@ More complete API Reference Documentation will be added in the future.
 
 See the following examples that use the `dhis2eo` library: 
 
-- [Aggregate Temperature Data](../aggregation/temperature.ipynb)
+- [Organisation Unit Aggregation](../aggregation/org-unit-aggregation.ipynb)
