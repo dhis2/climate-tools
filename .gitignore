@@ -16,3 +16,4 @@ test/data/
 .env/
 docs/src/data/pm_final_srilanka_linearp.nc
 docs/src/data/sri-lanka-provinces.geojson
+docs/data/local/
