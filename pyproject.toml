@@ -12,7 +12,7 @@ dependencies = [
     "earthkit-data[netcdf,geotiff,geopandas,projection,cds]",
     "earthkit-transforms",
     "earthkit-plots",
-    "dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@v0.3.0",
+    "dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git",
 ]
 
 [project.scripts]
