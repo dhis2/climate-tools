@@ -50,6 +50,10 @@ project:
       file: import-data/intro.md
       children:
         - file: import-data/using-python-client.ipynb
+    - title: Example workflows
+      file: examples/intro.md
+      children:
+        - file: examples/automated-cds-import.ipynb
     - file: contribute.md
     - file: glossary.md
     - file: resources.md
