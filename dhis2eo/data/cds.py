@@ -11,17 +11,15 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-# Fix cds cache cleanup error
-home_dir = Path.home()
-cds_cache_dir = home_dir / ".cdsapi_cache"
-cds_cache_dir.mkdir(parents=True, exist_ok=True)
-os.environ["CDSAPI_CACHE"] = str(cds_cache_dir)
-
 # TODO: maybe switch to lookup for different datasets
 DEFAULT_DAILY_ERA5_DATA_DICT = {
     'daily_mean': ['2m_temperature'], 
-    #'daily_sum':['total_precipitation']
+    'daily_sum': ['total_precipitation']
 }
+
+# Try to fix cache issue by setting download threads to 1
+config = earthkit.data.config
+config.set('number-of-download-threads', 1)
 
 def generate_cache_filename(dataset, year, data_dict, month=None, bbox=None):
     '''Generates a cache file name based on misc download parameters'''
@@ -61,7 +59,7 @@ def get_daily_era5_data(year, month, bbox, data_dict=None, cache_folder=None):
     file_name += '.nc'
     file_path = os.path.join(cache_folder, file_name)
     # check if cache filename already exists
-    if 0: #os.path.exists(file_path):
+    if os.path.exists(file_path):
         # load from cache
         logger.info(f'Loading from cache: {file_path}')
         data = earthkit.data.from_source('file', file_path)
@@ -74,6 +72,9 @@ def get_daily_era5_data(year, month, bbox, data_dict=None, cache_folder=None):
         else:
             logger.info(f'Saving to cache: {file_path}')
             data.to_target('file', file_path)
+            # Reload the data from the cache to ensure same .path attr
+            # Warning: a little hacky... 
+            data = earthkit.data.from_source('file', file_path)
     # return
     return data
 
@@ -103,7 +104,7 @@ def download_daily_era5_data(year, month, bbox, data_dict=None):
         first_day,last_day = calendar.monthrange(year, month)
         params['day'] = [str(day).zfill(2) for day in range(first_day, last_day)]
         # download the data
-        logger.info(f'Downloading {stat_type} data from api...')
+        logger.info(f'Downloading {stat_type} data from CDS API...')
         logger.info(f'Request parameters: \n{json.dumps(params)}')
         data = earthkit.data.from_source("cds",
             "derived-era5-single-levels-daily-statistics",

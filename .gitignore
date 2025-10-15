@@ -9,7 +9,7 @@ _build
 build/
 dist/
 
-test/data/
+tests/data/
 
 # Virtual environments
 .venv/
