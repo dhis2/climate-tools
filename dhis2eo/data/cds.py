@@ -8,10 +8,18 @@ import logging
 import calendar
 from datetime import date
 from pathlib import Path
+import sys
 
 logger = logging.getLogger(__name__)
 
-# TODO: maybe switch to lookup for different datasets
+# Since this module is so download centric, force all info logs to be printed
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+# TODO: Maybe switch to lookup for different datasets
 DEFAULT_DAILY_ERA5_DATA_DICT = {
     'daily_mean': ['2m_temperature'], 
     'daily_sum': ['total_precipitation']
@@ -45,17 +53,23 @@ def generate_cache_filename(dataset, year, data_dict, month=None, bbox=None):
     filename = '_'.join(stubs)
     return filename
 
-def get_daily_era5_data(year, month, bbox, data_dict=None, cache_folder=None):
+def get_daily_era5_data(year, month, org_units=None, bbox=None, data_dict=None, cache_folder=None):
     '''Hardcoded cached version for daily era5 data'''
     # TODO: make into generic decorator that can be applied to any download function
     # ...needs to accept a dataset arg as well
     current_date = date.today()
     # get cache folder
     cache_folder = tempfile.gettempdir()
+    # get or calculate bbox
+    if bbox is None:
+        if org_units is not None:
+            bbox = org_units.total_bounds.tolist()
+        else:
+            raise Exception('Either org_units or bbox have to be set')
     # get default data dicts
     data_dict = data_dict or DEFAULT_DAILY_ERA5_DATA_DICT
     # convert input args to a cache filename
-    file_name = generate_cache_filename('daily-era5', year, data_dict, month, bbox)
+    file_name = generate_cache_filename('daily-era5', year, data_dict=data_dict, month=month, bbox=bbox)
     file_name += '.nc'
     file_path = os.path.join(cache_folder, file_name)
     # check if cache filename already exists
@@ -65,7 +79,7 @@ def get_daily_era5_data(year, month, bbox, data_dict=None, cache_folder=None):
         data = earthkit.data.from_source('file', file_path)
     else:
         # download data from the api
-        data = download_daily_era5_data(year, month, bbox, data_dict)
+        data = download_daily_era5_data(year=year, month=month, data_dict=data_dict, org_units=org_units)
         # save to cache, but not if we're still in the current month
         if year == current_date.year and month == current_date.month:
             logger.info('Data is for the current month and will not be cached, since data is added daily')
@@ -78,11 +92,18 @@ def get_daily_era5_data(year, month, bbox, data_dict=None, cache_folder=None):
     # return
     return data
 
-def download_daily_era5_data(year, month, bbox, data_dict=None):
+def download_daily_era5_data(year, month, org_units=None, bbox=None, data_dict=None):
     '''Download daily era5 data'''
     # TODO: maybe support downloading a whole year, since it's allowed for this dataset... 
+    # TODO: maybe support not specifying a subregion/area to get the whole world, but unnecessary...? 
     # get default data
     data_dict = data_dict or DEFAULT_DAILY_ERA5_DATA_DICT
+    # get or calculate bbox
+    if bbox is None:
+        if org_units is not None:
+            bbox = list(org_units.total_bounds)
+        else:
+            raise Exception('Either org_units or bbox have to be set')
     # extract the coordinates from input bounding box
     xmin,ymin,xmax,ymax = bbox
     # download one statistics type at a time
