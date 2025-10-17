@@ -1,7 +1,7 @@
 from datetime import datetime
 import pandas as pd
 
-from ..utilities.time import detect_period_type, YEAR, MONTH, WEEK, DAY
+from ..utils.time import detect_period_type, YEAR, MONTH, WEEK, DAY
 
 def parse_period(period_value):
     '''Convert pandas period or datetime values to DHIS2 period type'''
