@@ -1,8 +1,15 @@
 
 from datetime import date
+import logging
+
+from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
+from dhis2eo.utils.earthkit import aggregate_to_org_units
+
+logger = logging.getLogger(__name__)
 
 def get_last_imported_period_for_data_element_ids(client, data_element_ids, org_unit_level):
     '''Returns dict of each provided data element id with latest period containing data for a given org_unit_level.'''
+    # TODO: maybe need to handle different period types? 
     last_imported_dict = {}
 
     for data_element_id in data_element_ids:
@@ -10,7 +17,7 @@ def get_last_imported_period_for_data_element_ids(client, data_element_ids, org_
         if latest_period_response['existing']:
             latest_period = latest_period_response['existing']['id']
             latest_year,latest_month = int(latest_period[:4]), int(latest_period[4:6])
-            last_imported_dict[data_element_id] = (latest_year, latest_month)
+            last_imported_dict[data_element_id] = {'year': latest_year, 'month': latest_month}
         else:
             last_imported_dict[data_element_id] = None
 
@@ -43,9 +50,8 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         if last_imported is None:
             # no previous import detected, all months need synching
             return True
-        last_imported_year, last_imported_month = last_imported
-        # synching is needed only if year and month is greater than last imported year and month
-        needs_synching = (year > last_imported_year) and (month > last_imported_month)
+        # synching is needed only if month is greater than last imported month in current year, or year is greater than last imported year
+        needs_synching = (year == last_imported['year'] and month > last_imported['month']) or (year > last_imported['year'])
         return needs_synching
     # loop months between start month and current month
     for year,month in iter_months(start_year, start_month, current_year, current_month):
@@ -57,48 +63,42 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         # yield dict of year, month, and synch_status
         yield {'year': year, 'month': month, 'synch_needed': synch_status}
 
-# def import_data_to_dhis2(client, org_units, get_data_func, data_element_id, earliest_year, earliest_month):
-#     import pandas as pd
-#     import geopandas as gpd
-#     from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
+def synch_dhis2_data(client, start_year, start_month, org_units, get_monthly_data_func, data_elements_to_variables):
+    # fetch, aggregate, and import data month-by-month
+    org_unit_level = 2 #org_units['level'].values[0]
+    data_element_ids = list(data_elements_to_variables.keys())
+    for month_synch_status in iter_dhis2_monthly_synch_status(client, start_year, start_month, data_element_ids, org_unit_level):
+        year,month,synch_needed_lookup = month_synch_status['year'], month_synch_status['month'], month_synch_status['synch_needed']
+        logger.info('====================')
+        logger.info(f'Period: {year}-{month}')
+        # download data
+        data_elements_needing_synch = [de for de,synch_needed in synch_needed_lookup.items() if synch_needed]
+        if not data_elements_needing_synch:
+            logger.info('All data elements up to date, no synch needed')
+            continue
+        logger.info('Getting data...')
+        data = get_monthly_data_func(year, month, org_units)
+        # aggregate to org units
+        # aggregates up to multiple variables depending on what was downloaded
+        logger.info('Aggregating...')
+        agg = aggregate_to_org_units(data, org_units)
+        # collect aggregated variables that need synching and convert to dhis2 json
+        all_data_values = []
+        for data_element_id in data_elements_needing_synch:
+            variable = data_elements_to_variables[data_element_id]
+            variable_data_values = dataframe_to_dhis2_json(
+                df=agg,
+                org_unit_col='org_unit_id', # better way to set this?
+                period_col='valid_time', # TODO: this should be more robust to other column names...
+                value_col=variable,
+                data_element_id=data_element_id,
+            )
+            all_data_values.extend(variable_data_values)
+        payload = {'dataValues': all_data_values}
+        # upload to dhis2
+        logger.info(f'Importing to DHIS2 data elements: {data_elements_needing_synch}...')
+        res = client.post("/api/dataValueSets", json=payload)
+        logger.info("Results:", res['response']['importCount'])
 
-#     bbox = org_units.total_bounds
-
-#     # fetch, aggregate, and import data month-by-month
-#     for year, month in iter_month_periods_since_last_data_value(data_element_id, earliest_year, earliest_month):
-#         print('====================')
-#         print('Period:', year, month)
-#         # download data
-#         print('Getting data...')
-#         data = get_data_func(year, month, bbox)
-#         # aggregate to org units
-#         print('Aggregating...')
-#         agg = aggregate(data, org_units, id_col='org_unit_id')
-
-#         # TODO: allow custom postprocessing after download before import...
-#         # convert to celsius
-#         #agg['t2m'] -= 273.15
-#         # ignore nan values
-#         #agg = agg[~pd.isna(agg['t2m'])]
-
-#         # convert to dhis2 json
-#         payload = dataframe_to_dhis2_json(
-#             df=agg,
-#             org_unit_col='org_unit_id',
-#             period_col='valid_time',
-#             value_col='t2m',
-#             data_element_id=data_element_id,
-#         )
-#         # upload to dhis2
-#         print('Importing to DHIS2...')
-#         res = client.post("/api/dataValueSets", json=payload)
-#         print("Results:", res['response']['importCount'])
-
-#     print('=====================')
-#     print('Data import finished!')
-
-# if __name__ == '__main__':
-#     data_element_id = 'GbUpvHzCzn8' # data element id that you want to import data into
-#     start_year = 2025
-#     start_month = 1
-#     import_data_to_dhis2(data_element_id, start_year, start_month)
+    logger.info('=====================')
+    logger.info('DHIS2 data synch finished!')
