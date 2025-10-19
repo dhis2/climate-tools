@@ -65,7 +65,7 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
 
 def synch_dhis2_data(client, start_year, start_month, org_units, get_monthly_data_func, data_elements_to_variables):
     # fetch, aggregate, and import data month-by-month
-    org_unit_level = 2 #org_units['level'].values[0]
+    org_unit_level = org_units['level'].values[0] # TODO: is this the best approach? 
     data_element_ids = list(data_elements_to_variables.keys())
     for month_synch_status in iter_dhis2_monthly_synch_status(client, start_year, start_month, data_element_ids, org_unit_level):
         year,month,synch_needed_lookup = month_synch_status['year'], month_synch_status['month'], month_synch_status['synch_needed']
