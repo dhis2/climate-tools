@@ -33,6 +33,9 @@ def dataframe_to_dhis2_json(df, data_element_id, org_unit_col, period_col, value
     # add dataElement column
     df_subset['dataElement'] = data_element_id
 
+    # remove nan values
+    df_subset = df_subset[~pd.isna(df_subset['value'])]
+
     # convert to list of dicts
     data = df_subset.to_dict(orient='records')
     return { "dataValues": data }

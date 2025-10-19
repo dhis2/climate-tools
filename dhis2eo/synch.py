@@ -93,10 +93,11 @@ def synch_dhis2_data(client, start_year, start_month, org_units, get_monthly_dat
                 value_col=variable,
                 data_element_id=data_element_id,
             )
-            all_data_values.extend(variable_data_values)
+            all_data_values.extend(variable_data_values['dataValues'])
         payload = {'dataValues': all_data_values}
         # upload to dhis2
         logger.info(f'Importing to DHIS2 data elements: {data_elements_needing_synch}...')
+        #logger.info(f'Payload: {payload}')
         res = client.post("/api/dataValueSets", json=payload)
         logger.info("Results:", res['response']['importCount'])
 

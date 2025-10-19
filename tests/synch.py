@@ -60,7 +60,7 @@ def test_synch_dhis2_data():
     
     # run the synch function
     start_year = 2025
-    start_month = 1
+    start_month = 5
     dhis2eo.synch.synch_dhis2_data(client, 
         start_year, 
         start_month, 
