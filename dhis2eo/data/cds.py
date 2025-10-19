@@ -122,8 +122,8 @@ def download_daily_era5_data(year, month, org_units=None, bbox=None, data_dict=N
             "data_format": "netcdf",
             "download_format": "unarchived",
         }
-        first_day,last_day = calendar.monthrange(year, month)
-        params['day'] = [str(day).zfill(2) for day in range(first_day, last_day)]
+        _,last_day = calendar.monthrange(year, month)
+        params['day'] = [str(day).zfill(2) for day in range(1, last_day)]
         # download the data
         logger.info(f'Downloading {stat_type} data from CDS API...')
         logger.info(f'Request parameters: \n{json.dumps(params)}')

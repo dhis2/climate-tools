@@ -50,8 +50,14 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         if last_imported is None:
             # no previous import detected, all months need synching
             return True
-        # synching is needed only if month is greater than last imported month in current year, or year is greater than last imported year
-        needs_synching = (year == last_imported['year'] and month > last_imported['month']) or (year > last_imported['year'])
+        # synching is needed only if month is greater than last imported month in current year
+        # or year is greater than last imported year
+        # or we're in the current month which means there might still be new days to import
+        needs_synching = (
+            (year == last_imported['year'] and month > last_imported['month']) or \
+            (year > last_imported['year']) or \
+            (year == current_year and month == current_month)
+        )
         return needs_synching
     # loop months between start month and current month
     for year,month in iter_months(start_year, start_month, current_year, current_month):
@@ -99,7 +105,7 @@ def synch_dhis2_data(client, start_year, start_month, org_units, get_monthly_dat
         logger.info(f'Importing to DHIS2 data elements: {data_elements_needing_synch}...')
         #logger.info(f'Payload: {payload}')
         res = client.post("/api/dataValueSets", json=payload)
-        logger.info("Results:", res['response']['importCount'])
+        logger.info(f"Results: {res['response']['importCount']}")
 
     logger.info('=====================')
     logger.info('DHIS2 data synch finished!')
