@@ -4,6 +4,7 @@ import logging
 
 from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
 from dhis2eo.utils.earthkit import aggregate_to_org_units
+from dhis2eo.org_units import from_dhis2_geojson
 
 logger = logging.getLogger(__name__)
 
@@ -69,7 +70,13 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         # yield dict of year, month, and synch_status
         yield {'year': year, 'month': month, 'synch_needed': synch_status}
 
-def synch_dhis2_data(client, start_year, start_month, org_units, get_monthly_data_func, data_elements_to_variables):
+def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, data_elements_to_variables, org_unit_level=None, org_units=None):
+    # get org units
+    if org_units is None:
+        if org_unit_level is None:
+            raise Exception('Either org_units or org_unit_level has to be specified')
+        org_units_geojson = client.get_org_units_geojson(level=org_unit_level)
+        org_units = from_dhis2_geojson(org_units_geojson)
     # fetch, aggregate, and import data month-by-month
     org_unit_level = org_units['level'].values[0] # TODO: is this the best approach? 
     data_element_ids = list(data_elements_to_variables.keys())

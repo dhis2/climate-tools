@@ -22,7 +22,7 @@ logger.setLevel(logging.INFO)
 # TODO: Maybe switch to lookup for different datasets
 DEFAULT_DAILY_ERA5_DATA_DICT = {
     'daily_mean': ['2m_temperature'], 
-    'daily_sum': ['total_precipitation']
+    'daily_sum': ['total_precipitation'], 
 }
 
 # Try to fix cache issue by setting download threads to 1
