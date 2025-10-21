@@ -70,7 +70,7 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         # yield dict of year, month, and synch_status
         yield {'year': year, 'month': month, 'synch_needed': synch_status}
 
-def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, data_elements_to_variables, org_unit_level=None, org_units=None):
+def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, variables, org_unit_level=None, org_units=None):
     # get org units
     if org_units is None:
         if org_unit_level is None:
@@ -79,7 +79,7 @@ def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, dat
         org_units = from_dhis2_geojson(org_units_geojson)
     # fetch, aggregate, and import data month-by-month
     org_unit_level = org_units['level'].values[0] # TODO: is this the best approach? 
-    data_element_ids = list(data_elements_to_variables.keys())
+    data_element_ids = [info['data_element_id'] for info in variables.values()]
     for month_synch_status in iter_dhis2_monthly_synch_status(client, start_year, start_month, data_element_ids, org_unit_level):
         year,month,synch_needed_lookup = month_synch_status['year'], month_synch_status['month'], month_synch_status['synch_needed']
         logger.info('====================')
@@ -94,11 +94,14 @@ def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, dat
         # aggregate to org units
         # aggregates up to multiple variables depending on what was downloaded
         logger.info('Aggregating...')
-        agg = aggregate_to_org_units(data, org_units)
+        variable_stats = {variable: info['method'] for variable,info in variables.items()}
+        agg = aggregate_to_org_units(data, org_units, variables=variable_stats)
         # collect aggregated variables that need synching and convert to dhis2 json
         all_data_values = []
-        for data_element_id in data_elements_needing_synch:
-            variable = data_elements_to_variables[data_element_id]
+        for variable,info in variables.items():
+            data_element_id = info['data_element_id']
+            if data_element_id not in data_elements_needing_synch:
+                continue
             variable_data_values = dataframe_to_dhis2_json(
                 df=agg,
                 org_unit_col='org_unit_id', # better way to set this?

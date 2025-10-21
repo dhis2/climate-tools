@@ -49,24 +49,24 @@ def test_synch_dhis2_data():
     # init dhsi2 client
     client = init_client()
     
-    # get org units
-    org_unit_level = 2
-    org_units_geojson = client.get_org_units_geojson(level=org_unit_level)
-    org_units = dhis2eo.org_units.from_dhis2_geojson(org_units_geojson)
-    
-    # define which data element ids should import which data variables
+    # define the data element id and aggregatioin method for each variable to import
     # TODO: these should probably be created per test and maybe initialized with some test values...
-    data_elements_to_variables = {'gPPVvS6u23w': 't2m', 'i9W7DhW60kK': 'tp'}
+    variables = {
+        't2m': {'data_element_id': 'gPPVvS6u23w', 'method': 'mean'},
+        'tp': {'data_element_id': 'i9W7DhW60kK', 'method': 'sum'},
+    }
     
     # run the synch function
     start_year = 2025
     start_month = 5
-    dhis2eo.synch.synch_dhis2_data(client, 
+    org_unit_level = 2
+    dhis2eo.synch.synch_dhis2_data(
+        client, 
+        dhis2eo.data.cds.get_daily_era5_data, 
         start_year, 
         start_month, 
-        org_units, 
-        dhis2eo.data.cds.get_daily_era5_data, 
-        data_elements_to_variables
+        variables=variables,
+        org_unit_level=org_unit_level, 
     )
     
     # TODO: should probably check imported values
