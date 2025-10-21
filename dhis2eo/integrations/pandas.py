@@ -11,6 +11,12 @@ def parse_period(period_value):
     if period_type == DAY:
         period_obj = pd.Period(period_value, freq='D')
         return period_obj.strftime('%Y%m%d')
+    elif period_type == MONTH:
+        period_obj = pd.Period(period_value, freq='M')
+        return period_obj.strftime('%Y%m')
+    elif period_type == YEAR:
+        period_obj = pd.Period(period_value, freq='Y')
+        return period_obj.strftime('%Y')
     else:
         raise NotImplementedError(f'Period type {period_type} not yet supported')
 

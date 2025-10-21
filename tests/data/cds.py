@@ -30,5 +30,3 @@ def test_get_daily_era5_data():
     data2 = cds.get_daily_era5_data(2016, 1, org_units) #, cache_folder='...')
     # test that both are read from the same cache file
     assert data1.path == data2.path
-
-test_get_daily_era5_data()
