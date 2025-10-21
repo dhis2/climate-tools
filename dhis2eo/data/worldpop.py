@@ -1,11 +1,19 @@
 import requests
 import tempfile
 import logging
+import sys
 import os
 
 import earthkit.data
 
 logger = logging.getLogger(__name__)
+
+# Since this module is so download centric, force all info logs to be printed
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 def get_population_data(year, iso3):
     '''Downloads or gets from cache 100m data from worldpop v2 with estimates from 2015-2030'''

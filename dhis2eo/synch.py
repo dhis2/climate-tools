@@ -1,5 +1,6 @@
 
 from datetime import date
+import sys
 import logging
 
 from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
@@ -7,6 +8,13 @@ from dhis2eo.utils.earthkit import aggregate_to_org_units
 from dhis2eo.org_units import from_dhis2_geojson
 
 logger = logging.getLogger(__name__)
+
+# Since this module is so download centric, force all info logs to be printed
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 def get_last_imported_period_for_data_element_ids(client, data_element_ids, org_unit_level):
     '''Returns dict of each provided data element id with latest period containing data for a given org_unit_level.'''
@@ -71,6 +79,31 @@ def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_elemen
         yield {'year': year, 'month': month, 'synch_needed': synch_status}
 
 def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, variables, org_unit_level=None, org_units=None):
+    '''Automatically check, download, and import a given dataset into DHIS2. 
+    Loops all months between start year and month, and checks whether the data already exists in DHIS2.
+    For months where the data are missing, download the data, aggregate variables from the data, and import into DHIS2.
+    
+    Args:
+    - client: 
+        DHIS2 client used to connect to your DHIS2 instance. 
+    - get_monthly_func: 
+        Function used to download or get your data. 
+        Function must return an earthkit or xarray dataset, and accept the following args: year, month, org_units. 
+    - start_year: 
+        Download data going back to this year.
+    - start_month: 
+        Download data going back to this month.
+    - variables: 
+        A dict defining how to import variables from the returned data function, of the form: 
+        {
+        'name_of_var1': {'data_element_id': '<ID>', 'method': '<sum|mean|min|max|count>'},
+        'name_of_var2': {'data_element_id': '<ID>', 'method': '<sum|mean|min|max|count>'},
+        }
+    - org_unit_level:
+        If provided, organisation units for this level will automatically be retrieved from your DHIS2 instance. 
+    - org_unit:
+        If provided, organisation units given directly as a geopandas GeoDataFrame.
+    '''
     # get org units
     if org_units is None:
         if org_unit_level is None:

@@ -54,6 +54,7 @@ project:
       file: examples/intro.md
       children:
         - file: examples/automated-cds-import.ipynb
+        - file: examples/worldpop-import.ipynb
     - file: contribute.md
     - file: glossary.md
     - file: resources.md
