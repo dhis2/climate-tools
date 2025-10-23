@@ -19,6 +19,7 @@ project:
       children:
         - file: getting-started/installation.md
         - file: getting-started/jupyter.md
+        - file: getting-started/intro-to-gis.ipynb
     - title: Tools
       file: tools/intro.md
       children:
@@ -54,6 +55,7 @@ project:
       file: examples/intro.md
       children:
         - file: examples/automated-cds-import.ipynb
+        - file: examples/worldpop-import.ipynb
     - file: contribute.md
     - file: glossary.md
     - file: resources.md

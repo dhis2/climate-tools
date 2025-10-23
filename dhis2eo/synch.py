@@ -1,0 +1,154 @@
+
+from datetime import date
+import sys
+import logging
+
+from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
+from dhis2eo.utils.aggregate import to_org_units
+from dhis2eo.org_units import from_dhis2_geojson
+
+logger = logging.getLogger(__name__)
+
+# Since this module is so download centric, force all info logs to be printed
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.INFO)
+handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+def get_last_imported_period_for_data_element_ids(client, data_element_ids, org_unit_level):
+    '''Returns dict of each provided data element id with latest period containing data for a given org_unit_level.'''
+    # TODO: maybe need to handle different period types? 
+    last_imported_dict = {}
+
+    for data_element_id in data_element_ids:
+        latest_period_response = client.analytics_latest_period_for_level(de_uid=data_element_id, level=org_unit_level)
+        if latest_period_response['existing']:
+            latest_period = latest_period_response['existing']['id']
+            latest_year,latest_month = int(latest_period[:4]), int(latest_period[4:6])
+            last_imported_dict[data_element_id] = {'year': latest_year, 'month': latest_month}
+        else:
+            last_imported_dict[data_element_id] = None
+
+    return last_imported_dict
+
+def iter_months(start_year, start_month, end_year, end_month):
+    '''Iterate months between start and end year and month.'''
+    # loop years and months between start and end month
+    for year in range(start_year, end_year + 1):
+        for month in range(1, 12 + 1):
+            # check outside of time scope
+            if year == start_year and month < start_month:
+                continue
+            if year == end_year and month > end_month:
+                continue
+            # yield year-month pairs
+            yield year,month
+
+def iter_dhis2_monthly_synch_status(client, start_year, start_month, data_element_ids, org_unit_level):
+    '''Iterate all months since start_month until today
+    and return dict indicating the sync status for each data element id.'''
+    # determine the last imported period for each provided data element id
+    last_imported_dict = get_last_imported_period_for_data_element_ids(client, data_element_ids, org_unit_level)
+    # get current year and month
+    current_date = date.today()
+    current_year,current_month = current_date.year, current_date.month
+    # define how to check synch status
+    def get_data_element_synch_status(year, month, data_element_id):
+        last_imported = last_imported_dict[data_element_id]
+        if last_imported is None:
+            # no previous import detected, all months need synching
+            return True
+        # synching is needed only if month is greater than last imported month in current year
+        # or year is greater than last imported year
+        # or we're in the current month which means there might still be new days to import
+        needs_synching = (
+            (year == last_imported['year'] and month > last_imported['month']) or \
+            (year > last_imported['year']) or \
+            (year == current_year and month == current_month)
+        )
+        return needs_synching
+    # loop months between start month and current month
+    for year,month in iter_months(start_year, start_month, current_year, current_month):
+        # check synch status of each data element id for this month
+        synch_status = {
+            data_element_id: get_data_element_synch_status(year, month, data_element_id)
+            for data_element_id in data_element_ids
+        }
+        # yield dict of year, month, and synch_status
+        yield {'year': year, 'month': month, 'synch_needed': synch_status}
+
+def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, variables, org_unit_level=None, org_units=None):
+    '''Automatically check, download, and import a given dataset into DHIS2. 
+    Loops all months between start year and month, and checks whether the data already exists in DHIS2.
+    For months where the data are missing, download the data, aggregate variables from the data, and import into DHIS2.
+    
+    Args:
+    - client: 
+        DHIS2 client used to connect to your DHIS2 instance. 
+    - get_monthly_func: 
+        Function used to download or get your data. 
+        Function must return an earthkit or xarray dataset, and accept the following args: year, month, org_units. 
+    - start_year: 
+        Download data going back to this year.
+    - start_month: 
+        Download data going back to this month.
+    - variables: 
+        A dict defining how to import variables from the returned data function, of the form: 
+        {
+        'name_of_var1': {'data_element_id': '<ID>', 'method': '<sum|mean|min|max|count>'},
+        'name_of_var2': {'data_element_id': '<ID>', 'method': '<sum|mean|min|max|count>'},
+        }
+    - org_unit_level:
+        If provided, organisation units for this level will automatically be retrieved from your DHIS2 instance. 
+    - org_unit:
+        If provided, organisation units given directly as a geopandas GeoDataFrame.
+    '''
+    # get org units
+    if org_units is None:
+        if org_unit_level is None:
+            raise Exception('Either org_units or org_unit_level has to be specified')
+        org_units_geojson = client.get_org_units_geojson(level=org_unit_level)
+        org_units = from_dhis2_geojson(org_units_geojson)
+    # fetch, aggregate, and import data month-by-month
+    org_unit_level = org_units['level'].values[0] # TODO: is this the best approach? 
+    data_element_ids = [info['data_element_id'] for info in variables.values()]
+    for month_synch_status in iter_dhis2_monthly_synch_status(client, start_year, start_month, data_element_ids, org_unit_level):
+        year,month,synch_needed_lookup = month_synch_status['year'], month_synch_status['month'], month_synch_status['synch_needed']
+        logger.info('====================')
+        logger.info(f'Period: {year}-{month}')
+        # download data
+        data_elements_needing_synch = [de for de,synch_needed in synch_needed_lookup.items() if synch_needed]
+        if not data_elements_needing_synch:
+            logger.info('All data elements up to date, no synch needed')
+            continue
+        logger.info('Getting data...')
+        data = get_monthly_data_func(year, month, org_units)
+        # aggregate to org units
+        # aggregates up to multiple variables depending on what was downloaded
+        logger.info('Aggregating...')
+        variable_stats = {variable: info['method'] for variable,info in variables.items()}
+        agg = to_org_units(data, org_units, variables=variable_stats)
+        # collect aggregated variables that need synching and convert to dhis2 json
+        all_data_values = []
+        for variable,info in variables.items():
+            data_element_id = info['data_element_id']
+            if data_element_id not in data_elements_needing_synch:
+                continue
+            variable_data_values = dataframe_to_dhis2_json(
+                df=agg,
+                org_unit_col='org_unit_id', # better way to set this?
+                period_col='valid_time', # TODO: this should be more robust to other column names...
+                value_col=variable,
+                data_element_id=data_element_id,
+            )
+            all_data_values.extend(variable_data_values['dataValues'])
+        payload = {'dataValues': all_data_values}
+        # upload to dhis2
+        logger.info(f'Importing to DHIS2 data elements: {data_elements_needing_synch}...')
+        #logger.info(f'Payload: {payload}')
+        res = client.post("/api/dataValueSets", json=payload)
+        logger.info(f"Results: {res['response']['importCount']}")
+
+    logger.info('=====================')
+    logger.info('DHIS2 data synch finished!')
