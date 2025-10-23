@@ -4,7 +4,7 @@ import sys
 import logging
 
 from dhis2eo.integrations.pandas import dataframe_to_dhis2_json
-from dhis2eo.utils.earthkit import aggregate_to_org_units
+from dhis2eo.utils.aggregate import to_org_units
 from dhis2eo.org_units import from_dhis2_geojson
 
 logger = logging.getLogger(__name__)
@@ -128,7 +128,7 @@ def synch_dhis2_data(client, get_monthly_data_func, start_year, start_month, var
         # aggregates up to multiple variables depending on what was downloaded
         logger.info('Aggregating...')
         variable_stats = {variable: info['method'] for variable,info in variables.items()}
-        agg = aggregate_to_org_units(data, org_units, variables=variable_stats)
+        agg = to_org_units(data, org_units, variables=variable_stats)
         # collect aggregated variables that need synching and convert to dhis2 json
         all_data_values = []
         for variable,info in variables.items():
