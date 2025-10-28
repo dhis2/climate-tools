@@ -12,44 +12,14 @@ site:
 
 Open source libraries and workflows to access, process and upload climate, weather and environmental data to DHIS2 and the Chap Modeling Platform.
 
-![](https://dhis2.org/wp-content/uploads/Climate-Data-App-screenshots.jpg)
+![](/images/climate-tools-illustration.png)
 
 {button}`Get started <./getting-started/intro>`
 
-+++ { "kind": "justified"}
++++ { "kind": "centered"}
 
-:::::{grid} 1 2 3 3
-::::{card}
-:url: https://next.juptyerbook.org
-:footer: Guide
+### Flexible open source tools for data integration
 
-:::{image} ./getting-started/images/netcdf-variables.png
-:height: 256px
-:::
+DHIS2 Climate Tools contain open source libraries and workflows based on the Python programming language that you can use to access, process and upload climate, weather and environmental data to DHIS2 and the Chap Modeling Platform. These tools aim to help break climate and health data out of silos to facilitate combined analysis and forecasting, and strengthen climate-resilient health systems.
 
-Introduction to GIS and climate data
-::::
-
-::::{card}
-:url: https://mystmd.org
-:footer: Guide
-
-:::{image} ./aggregation/images/grid-orgunit-harmonization.png
-:height: 256px
-:::
-
-Aggregate climate data to DHIS2 organisation units
-::::
-
-::::{card}
-:url: https://mystmd.org
-:footer: Tool
-
-:::{image} ./org-units/images/orgunits-intro.png.png
-:height: 256px
-:::
-
-DHIS2 Python Client
-::::
-
-:::::
+{button}`Learn more<./about>`

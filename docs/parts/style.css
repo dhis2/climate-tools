@@ -115,11 +115,34 @@ article
   padding-right: 0;
 }
 
-article > main div.relative.group\/block.article-grid .bg-stone-900 {
-  background-color: transparent;
+article > main div.relative.group\/block.article-grid .py-24 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Section below banner on landing page */
+article > main div.relative.group\/block.article-grid .bg-stone-900 {
+  background-color: transparent;
+  margin-top: 30px !important;
+  margin-bottom: 30px;
+}
+
+/* Centered section below banner on landing page */
+article > main div.relative.group\/block .text-center .py-20 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+article > main div.relative.group\/block .text-center .py-20 h3 {
+  font-size: 28px;
+}
+
+article > main div.relative.group\/block .text-center .py-20 p {
+  text-align: left;
+  padding: 0 15%;
+}
+
+/*
 article > main .grid-areas-just-narrow {
   padding-top: 0px !important;
 }
+*/
