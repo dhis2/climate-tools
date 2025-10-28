@@ -1,7 +1,35 @@
+/* Prevent horizontal scrolling due to padding/margin for banner below */
 body {
   overflow-x: hidden;
 }
 
+/* Footer styles */
+footer.article {
+  background-color: rgb(48, 56, 70) !important;
+  color: white;
+  font-size: 15px;
+}
+
+footer.article strong {
+  color: white;
+  font-weight: bold;
+}
+
+footer.article a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+footer.article a:hover {
+  text-decoration: underline;
+}
+
+.dark footer.article {
+  background-color: #121212 !important;
+}
+
+/* DHIS2 header styles */
 .dhis2-header {
   position: fixed;
   top: 0;
@@ -15,17 +43,35 @@ body {
   margin-right: 8px;
 }
 
+.dhis2-header a {
+  color: #051841 !important;
+}
+
 .dhis2-header a:after {
   content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjciPjxwYXRoIGZpbGw9IiMyOTNGNkYiIGQ9Ik03IDB2NEg2VjEuNzA3TDEuMzUzIDYuMzU0bC0uNzA4LS43MDhMNS4yOTIgMUgzVjB6Ii8+PC9zdmc+");
   padding-left: 4px;
   padding-right: 10px;
 }
 
+.dark .dhis2-header {
+  background-color: #222;
+}
+
+.dark .dhis2-header a {
+  color: white !important;
+}
+
+/* Remove transparency of site header */
 .backdrop-blur {
+  background-color: white;
   top: 30px !important;
 }
 
-/* Move left sidebar down */
+.dark .backdrop-blur {
+  background-color: #121212;
+}
+
+/* Move left sidebar down due to DHIS2 header  */
 @media (min-width: 1280px) {
   .xl\:article-center-grid > *,
   .xl\:article-grid > *,
@@ -34,17 +80,18 @@ body {
   }
 }
 
-/* Move right sidebar down */
+/* Move right sidebar down due to DHIS2 header */
 @media (min-width: 1024px) {
   .lg\:sticky {
     padding-top: 20px !important;
   }
 }
-
+/* Move main content down due to DHIS2 header */
 article > main > div > div:first-child {
   margin-top: 20px !important;
 }
 
+/* Adjust styles for banner section on landing page */
 /* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class/8539107#8539107 */
 article > main div.relative.group\/block.article-grid {
   margin-top: 30px !important;
@@ -72,7 +119,7 @@ article > main div.relative.group\/block.article-grid .bg-stone-900 {
   background-color: transparent;
 }
 
-.grid-areas-just-narrow {
+/* Section below banner on landing page */
+article > main .grid-areas-just-narrow {
   padding-top: 0px !important;
-  margin-top: -20px !important;
 }

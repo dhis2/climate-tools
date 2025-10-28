@@ -57,6 +57,7 @@ project:
         - file: examples/automated-cds-import.ipynb
         - file: examples/worldpop-import.ipynb
     - file: contribute.md
+      hidden: true
     - file: about.md
       hidden: true
     - file: glossary.md
@@ -75,8 +76,7 @@ site:
       url: /getting-started/intro
     - title: About
       url: /about
-  actions:
-    - title: GitHub
-      url: https://github.com/dhis2/climate-tools
+    - title: Contribute
+      url: /contribute
   parts:
     footer: parts/footer.md
