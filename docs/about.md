@@ -1,4 +1,9 @@
-# DHIS2 Climate Tools
+---
+title: About DHIS2 Climate Tools
+short_title: About
+site:
+  hide_toc: true
+---
 
 DHIS2 Climate Tools contains open source libraries and workflows to access, process and upload
 climate, weather and environmental data to [DHIS2](https://dhis2.org/) and the [Chap Modeling Platform](https://dhis2-chap.github.io/chap-site/).

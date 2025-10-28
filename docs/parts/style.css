@@ -1,0 +1,75 @@
+body {
+  overflow-x: hidden;
+}
+
+.dhis2-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f8fafc;
+  font-size: 12px;
+  color: #051841;
+  text-align: right;
+  padding: 4px 10px;
+  margin-right: 8px;
+}
+
+.dhis2-header a:after {
+  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjciPjxwYXRoIGZpbGw9IiMyOTNGNkYiIGQ9Ik03IDB2NEg2VjEuNzA3TDEuMzUzIDYuMzU0bC0uNzA4LS43MDhMNS4yOTIgMUgzVjB6Ii8+PC9zdmc+");
+  padding-left: 4px;
+}
+
+.backdrop-blur {
+  top: 30px !important;
+}
+
+/* Move left sidebar down */
+@media (min-width: 1280px) {
+  .xl\:article-center-grid > *,
+  .xl\:article-grid > *,
+  .xl\:article-left-grid > * {
+    margin-top: 20px !important;
+  }
+}
+
+/* Move right sidebar down */
+@media (min-width: 1024px) {
+  .lg\:sticky {
+    padding-top: 20px !important;
+  }
+}
+
+article > main > div > div:first-child {
+  margin-top: 20px !important;
+}
+
+/* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class/8539107#8539107 */
+article > main div.relative.group\/block.article-grid {
+  margin-top: 30px !important;
+  background-color: rgb(2, 32, 79);
+  margin-left: -500px;
+  padding-left: 500px;
+  margin-right: -500px;
+  padding-right: 500px;
+  overflow-x: hidden;
+}
+
+article
+  > main
+  div.relative.group\/block.article-grid
+  ~ div.relative.group\/block.article-grid {
+  background-color: white;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+article > main div.relative.group\/block.article-grid .bg-stone-900 {
+  background-color: transparent;
+}
+
+.grid-areas-just-narrow {
+  padding-top: 0px !important;
+}
