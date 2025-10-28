@@ -18,6 +18,7 @@ body {
 .dhis2-header a:after {
   content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjciPjxwYXRoIGZpbGw9IiMyOTNGNkYiIGQ9Ik03IDB2NEg2VjEuNzA3TDEuMzUzIDYuMzU0bC0uNzA4LS43MDhMNS4yOTIgMUgzVjB6Ii8+PC9zdmc+");
   padding-left: 4px;
+  padding-right: 10px;
 }
 
 .backdrop-blur {
@@ -59,6 +60,7 @@ article
   > main
   div.relative.group\/block.article-grid
   ~ div.relative.group\/block.article-grid {
+  margin-top: 0 !important;
   background-color: white;
   margin-left: 0;
   padding-left: 0;
@@ -72,4 +74,5 @@ article > main div.relative.group\/block.article-grid .bg-stone-900 {
 
 .grid-areas-just-narrow {
   padding-top: 0px !important;
+  margin-top: -20px !important;
 }
