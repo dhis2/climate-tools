@@ -92,57 +92,68 @@ article > main > div > div:first-child {
 }
 
 /* Adjust styles for banner section on landing page */
-/* https://stackoverflow.com/questions/2717480/css-selector-for-first-element-with-class/8539107#8539107 */
-article > main div.relative.group\/block.article-grid {
+.dhis2-split-image {
   margin-top: 30px !important;
   background-color: rgb(2, 32, 79);
   margin-left: -500px;
   padding-left: 500px;
   margin-right: -500px;
   padding-right: 500px;
-  overflow-x: hidden;
 }
 
-article
-  > main
-  div.relative.group\/block.article-grid
-  ~ div.relative.group\/block.article-grid {
-  margin-top: 0 !important;
-  background-color: white;
-  margin-left: 0;
-  padding-left: 0;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-article > main div.relative.group\/block.article-grid .py-24 {
+.dhis2-split-image .py-24 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-article > main div.relative.group\/block.article-grid .bg-stone-900 {
+.dhis2-split-image .bg-stone-900 {
   background-color: transparent;
   margin-top: 30px !important;
   margin-bottom: 30px;
 }
 
 /* Centered section below banner on landing page */
-article > main div.relative.group\/block .text-center .py-20 {
+.dhis2-centered .py-20 {
   padding-top: 0;
   padding-bottom: 0;
 }
 
-article > main div.relative.group\/block .text-center .py-20 h3 {
-  font-size: 28px;
+.dhis2-centered h3 {
+  font-size: 24px;
 }
 
-article > main div.relative.group\/block .text-center .py-20 p {
+.dhis2-centered p {
   text-align: left;
   padding: 0 15%;
 }
 
-/*
-article > main .grid-areas-just-narrow {
-  padding-top: 0px !important;
+/* Card section styles on landing page */
+.dhis2-justified .grid-areas-just-narrow {
+  padding-top: 0;
+  padding-bottom: 20px;
+  background-color: #eee;
+  margin-left: -500px;
+  padding-left: 500px;
+  margin-right: -500px;
+  padding-right: 500px;
 }
-*/
+
+.dhis2-justified h3 {
+  font-size: 24px;
+  grid-column: span 2;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+
+.dhis2-justified .myst-card-body {
+  background-color: white;
+}
+
+.dark .dhis2-justified .grid-areas-just-narrow {
+  background-color: rgb(28, 25, 23);
+}
+
+.dark .dhis2-justified .myst-card-body {
+  background-color: transparent;
+}
