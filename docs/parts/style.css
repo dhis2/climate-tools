@@ -116,6 +116,7 @@ article > main > div > div:first-child {
 .dhis2-centered .py-20 {
   padding-top: 0;
   padding-bottom: 0;
+  margin-bottom: -40px;
 }
 
 .dhis2-centered h3 {
@@ -124,7 +125,68 @@ article > main > div > div:first-child {
 
 .dhis2-centered p {
   text-align: left;
-  padding: 0 15%;
+  padding: 0 10%;
+}
+
+/* Climate Tools users */
+.dhis2-users {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dhis2-users .text-center {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -20px;
+}
+
+.dhis2-users .myst-grid {
+  margin-top: 0;
+}
+
+.dhis2-users .myst-card-body {
+  position: relative;
+  margin: 8px 0;
+}
+
+.dhis2-users img {
+  margin-left: 0 !important;
+}
+
+.dhis2-users p {
+  position: absolute;
+  top: 8px;
+  left: 105px;
+  margin: 0;
+  text-align: left;
+  line-height: 22px;
+}
+
+.dhis2-users p:nth-of-type(1) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dark .dhis2-users p:nth-of-type(1) {
+  color: #ddd;
+}
+
+.dhis2-users p:nth-of-type(2) {
+  top: 34px;
+}
+
+@media (max-width: 700px) {
+  .dhis2-users p:nth-of-type(1) {
+    top: 30px;
+  }
+  .dhis2-users p:nth-of-type(2) {
+    display: none;
+  }
+}
+
+.dhis2-users a.button {
+  margin-top: 10px;
 }
 
 /* Card section styles on landing page */
@@ -148,6 +210,11 @@ article > main > div > div:first-child {
 
 .dhis2-justified .myst-card-body {
   background-color: white;
+}
+
+.dhis2-justified img {
+  padding-top: 10px;
+  margin-left: 0 !important;
 }
 
 .dark .dhis2-justified .grid-areas-just-narrow {
