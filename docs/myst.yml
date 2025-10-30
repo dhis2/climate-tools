@@ -33,14 +33,14 @@ project:
       file: getting-data/intro.md
       children:
         - file: getting-data/climate-data-store.ipynb
-    - title: Data visualization
-      file: visualization/intro.md
-      children:
-        - file: visualization/temperature.ipynb
     - title: Data analysis
       file: analysis/intro.md
       children:
         - file: analysis/climate-normals.ipynb
+    - title: Data visualization
+      file: visualization/intro.md
+      children:
+        - file: visualization/temperature.ipynb
     - title: Data aggregation
       file: aggregation/intro.md
       children:

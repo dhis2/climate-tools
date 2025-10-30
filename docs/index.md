@@ -6,7 +6,7 @@ site:
   hide_outline: true
 ---
 
-+++ { "kind": "split-image", "class": "dhis2-split-image" }
++++ { "kind": "split-image", "class": "dhis2-banner" }
 
 ## DHIS2 Climate Tools
 
@@ -20,7 +20,7 @@ Open source libraries and workflows to access, process and upload climate, weath
 
 ### Flexible open source tools for data analysis and integration
 
-DHIS2 Climate Tools contain open source libraries and workflows based on the Python programming language that you can use to access, process and upload climate, weather and environmental data to DHIS2 and the Chap Modeling Platform. These tools aim to help break climate and health data out of silos to facilitate combined analysis and forecasting, and strengthen climate-resilient health systems.
+DHIS2 Climate Tools contain open source libraries and workflows based on the Python programming language that you can use to access, process and upload data from different sources to DHIS2 and the Chap Modeling Platform. The same data can be analysed and visualized using tools and techniques that are not available in DHIS2. Climate Tools help to break climate and health data out of silos to facilitate combined analysis and forecasting, and strengthen climate-resilient health systems.
 
 +++ {"kind": "logo-cloud", "class": "dhis2-users"}
 

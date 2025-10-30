@@ -96,7 +96,7 @@ article > main > div > div:first-child {
 }
 
 /* Adjust styles for banner section on landing page */
-.dhis2-split-image {
+.dhis2-banner {
   margin-top: 30px !important;
   background-color: rgb(2, 32, 79);
   margin-left: -500px;
@@ -105,12 +105,12 @@ article > main > div > div:first-child {
   padding-right: 500px;
 }
 
-.dhis2-split-image .py-24 {
+.dhis2-banner .py-24 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-.dhis2-split-image .bg-stone-900 {
+.dhis2-banner .bg-stone-900 {
   background-color: transparent;
   margin-top: 30px !important;
   margin-bottom: 30px;
