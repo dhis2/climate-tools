@@ -7,6 +7,17 @@
     <a href="https://community.dhis2.org/" target="_blank">Community</a>
 </div>
 
-**Contact us**
-
+:::::{grid} 2 2 2 2
+::::{div}
+:class: dhis2-footer-left
+**Contact us**\
 climate@dhis2.org
+::::
+
+::::{div}
+:class: dhis2-footer-right
+[DHIS2](https://dhis2.org/)\
+[Community](https://community.dhis2.org/)
+::::
+
+:::::

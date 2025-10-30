@@ -29,6 +29,10 @@ footer.article a:hover {
   background-color: #121212 !important;
 }
 
+.dhis2-footer-right {
+  text-align: right;
+}
+
 /* DHIS2 header styles */
 .dhis2-header {
   position: fixed;
