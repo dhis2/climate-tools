@@ -145,9 +145,14 @@ article > main > div > div:first-child {
   margin-top: 0;
 }
 
+.dhis2-users .myst-card {
+  padding-right: 10px;
+}
+
 .dhis2-users .myst-card-body {
   position: relative;
-  margin: 8px 0;
+  margin: 12px 0;
+  height: 140px;
 }
 
 .dhis2-users img {
@@ -156,7 +161,7 @@ article > main > div > div:first-child {
 
 .dhis2-users p {
   position: absolute;
-  top: 8px;
+  top: 5px;
   left: 105px;
   margin: 0;
   text-align: left;
@@ -174,13 +179,38 @@ article > main > div > div:first-child {
 }
 
 .dhis2-users p:nth-of-type(2) {
-  top: 34px;
+  top: 30px;
+}
+
+/* Learn more button */
+.dhis2-users p:nth-of-type(3),
+.dhis2-justified p:nth-of-type(3) {
+  top: auto;
+  bottom: 8px;
+  width: 110px;
+  background-color: #002147;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 4px 10px 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.dark .dhis2-users p:nth-of-type(3),
+.dark .dhis2-justified p:nth-of-type(3) {
+  background-color: white;
+  color: #002147;
 }
 
 @media (max-width: 700px) {
-  .dhis2-users p:nth-of-type(1) {
-    top: 30px;
+  .dhis2-users .myst-card-body {
+    height: 85px;
   }
+
   .dhis2-users p:nth-of-type(2) {
     display: none;
   }
@@ -202,7 +232,7 @@ article > main > div > div:first-child {
 }
 
 .dhis2-justified h3 {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 36px;
   grid-column: span 2;
   text-align: center;
@@ -217,6 +247,15 @@ article > main > div > div:first-child {
 .dhis2-justified img {
   padding-top: 10px;
   margin-left: 0 !important;
+}
+
+.dhis2-justified p:nth-of-type(1) {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.dhis2-justified p:nth-of-type(2) {
+  margin-top: 0;
 }
 
 .dark .dhis2-justified .grid-areas-just-narrow {

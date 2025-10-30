@@ -14,7 +14,7 @@ Open source libraries and workflows to access, process and upload climate, weath
 
 ![](/images/climate-tools-illustration.png)
 
-{button}`Get started <./getting-started/intro>`
+{button}`Learn more <./about>`
 
 +++ { "kind": "centered", "class": "dhis2-centered" }
 
@@ -26,23 +26,27 @@ DHIS2 Climate Tools contain open source libraries and workflows based on the Pyt
 
 :::::{grid} 2 2 3 3
 ::::{card}
-:url: /about
+:url: /data-engineer
 :::{image} ./images/data-engineers.svg
 :height: 70px
 :::
-**Data Engineers**
+**Data Engineer**
 
 Build automatic workflows for data integration.
+
+Get started
 ::::
 
 ::::{card}
-:url: /about
+:url: /data-scientist
 :::{image} ./images/data-scientists.svg
 :height: 70px
 :::
 **Data Scientist**
 
 Analyse and visualize data using Jupyter Notebooks.
+
+Get started
 ::::
 
 ::::{card}
@@ -54,11 +58,9 @@ Analyse and visualize data using Jupyter Notebooks.
 
 We welcome contributions to DHIS2 Climate Tools.
 
+Get started
 ::::
-
 :::::
-
-{button}`Learn more<./about>`
 
 +++ { "kind": "justified", "class": "dhis2-justified" }
 
@@ -68,32 +70,51 @@ We welcome contributions to DHIS2 Climate Tools.
 ::::{card}
 :url: /about
 :::{image} ./images/logo.svg
+:class: dark:hidden
+:height: 70px
+:::
+:::{image} ./images/logo-neg.svg
+:class: hidden dark:block
 :height: 70px
 :::
 **DHIS2 Climate Tools**
 
 The open source tools presented on this page offering programmers full flexibility and control of the data flow. The tools can be used with both local and global climate, environmental and socio-economic data.
+
+Learn more
 ::::
 
 ::::{card}
 :url: https://dhis2.org/climate/climate-data-app/
 :::{image} ./images/logo.svg
+:class: dark:hidden
+:height: 70px
+:::
+:::{image} ./images/logo-neg.svg
+:class: hidden dark:block
 :height: 70px
 :::
 **DHIS2 Climate App**
 
 Explore daily and monthly temperature, precipitation, and humidity data for your organization units, and to import weather, climate and environmental data into DHIS2 without writing any code.
+
+Learn more
 ::::
 
 ::::{card}
 :url: https://dhis2-chap.github.io/chap-site/
 :::{image} ./images/chap-logo.svg
+:class: dark:hidden
+:height: 70px
+:::
+:::{image} ./images/chap-logo-neg.svg
+:class: hidden dark:block
 :height: 70px
 :::
 **Chap Modeling Platform**
 
 Open source platform bringing together climate health models into a unified ecosystem, connecting researchers and cutting-edge epidimiological models to policy makers and health practitioners.
 
+Learn more
 ::::
-
 :::::
