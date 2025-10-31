@@ -1,0 +1,271 @@
+/* Prevent horizontal scrolling due to padding/margin for banner below */
+body {
+  overflow-x: hidden;
+}
+
+/* Footer styles */
+footer.article {
+  background-color: rgb(48, 56, 70) !important;
+  color: white;
+  font-size: 15px;
+}
+
+footer.article strong {
+  color: white;
+  font-weight: bold;
+}
+
+footer.article a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+footer.article a:hover {
+  text-decoration: underline;
+}
+
+.dark footer.article {
+  background-color: #121212 !important;
+}
+
+.dhis2-footer-right {
+  text-align: right;
+}
+
+/* DHIS2 header styles */
+.dhis2-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f8fafc;
+  font-size: 12px;
+  color: #051841;
+  text-align: right;
+  padding: 4px 10px;
+  margin-right: 8px;
+}
+
+.dhis2-header a {
+  color: #051841 !important;
+}
+
+.dhis2-header a:after {
+  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjciPjxwYXRoIGZpbGw9IiMyOTNGNkYiIGQ9Ik03IDB2NEg2VjEuNzA3TDEuMzUzIDYuMzU0bC0uNzA4LS43MDhMNS4yOTIgMUgzVjB6Ii8+PC9zdmc+");
+  padding-left: 4px;
+  padding-right: 10px;
+}
+
+.dark .dhis2-header {
+  background-color: #222;
+}
+
+.dark .dhis2-header a {
+  color: white !important;
+}
+
+/* Remove transparency of site header */
+.backdrop-blur {
+  background-color: white;
+  top: 30px !important;
+}
+
+.dark .backdrop-blur {
+  background-color: #121212;
+}
+
+/* Move left sidebar down due to DHIS2 header  */
+@media (min-width: 1280px) {
+  .xl\:article-center-grid > *,
+  .xl\:article-grid > *,
+  .xl\:article-left-grid > * {
+    margin-top: 20px !important;
+  }
+}
+
+/* Move right sidebar down due to DHIS2 header */
+@media (min-width: 1024px) {
+  .lg\:sticky {
+    padding-top: 20px !important;
+  }
+}
+/* Move main content down due to DHIS2 header */
+article > main > div > div:first-child {
+  margin-top: 20px !important;
+}
+
+/* Adjust styles for banner section on landing page */
+.dhis2-banner {
+  margin-top: 30px !important;
+  background-color: rgb(2, 32, 79);
+  margin-left: -500px;
+  padding-left: 500px;
+  margin-right: -500px;
+  padding-right: 500px;
+}
+
+.dhis2-banner .py-24 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.dhis2-banner .bg-stone-900 {
+  background-color: transparent;
+  margin-top: 30px !important;
+  margin-bottom: 30px;
+}
+
+/* Centered section below banner on landing page */
+.dhis2-centered .py-20 {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: -40px;
+}
+
+.dhis2-centered h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.dhis2-centered p {
+  text-align: left;
+  padding: 0 10%;
+}
+
+/* Climate Tools users */
+.dhis2-users {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dhis2-users .text-center {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -20px;
+}
+
+.dhis2-users .myst-grid {
+  margin-top: 0;
+}
+
+.dhis2-users .myst-card {
+  padding-right: 10px;
+}
+
+.dhis2-users .myst-card-body {
+  position: relative;
+  margin: 12px 0;
+  height: 140px;
+}
+
+.dhis2-users img {
+  margin-left: 0 !important;
+}
+
+.dhis2-users p {
+  position: absolute;
+  top: 5px;
+  left: 105px;
+  margin: 0;
+  text-align: left;
+  line-height: 22px;
+}
+
+.dhis2-users p:nth-of-type(1) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dark .dhis2-users p:nth-of-type(1) {
+  color: #ddd;
+}
+
+.dhis2-users p:nth-of-type(2) {
+  top: 30px;
+}
+
+/* Learn more button */
+.dhis2-users p:nth-of-type(3),
+.dhis2-justified p:nth-of-type(3) {
+  top: auto;
+  bottom: 8px;
+  width: 110px;
+  background-color: #002147;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 4px 10px 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.dark .dhis2-users p:nth-of-type(3),
+.dark .dhis2-justified p:nth-of-type(3) {
+  background-color: white;
+  color: #002147;
+}
+
+@media (max-width: 700px) {
+  .dhis2-users .myst-card-body {
+    height: 85px;
+  }
+
+  .dhis2-users p:nth-of-type(2) {
+    display: none;
+  }
+}
+
+.dhis2-users a.button {
+  margin-top: 10px;
+}
+
+/* Card section styles on landing page */
+.dhis2-justified .grid-areas-just-narrow {
+  padding-top: 0;
+  padding-bottom: 20px;
+  background-color: #eee;
+  margin-left: -500px;
+  padding-left: 500px;
+  margin-right: -500px;
+  padding-right: 500px;
+}
+
+.dhis2-justified h3 {
+  font-size: 26px;
+  line-height: 36px;
+  grid-column: span 2;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+
+.dhis2-justified .myst-card-body {
+  background-color: white;
+}
+
+.dhis2-justified img {
+  padding-top: 10px;
+  margin-left: 0 !important;
+}
+
+.dhis2-justified p:nth-of-type(1) {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+
+.dhis2-justified p:nth-of-type(2) {
+  margin-top: 0;
+}
+
+.dark .dhis2-justified .grid-areas-just-narrow {
+  background-color: rgb(28, 25, 23);
+}
+
+.dark .dhis2-justified .myst-card-body {
+  background-color: transparent;
+}
