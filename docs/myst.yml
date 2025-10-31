@@ -55,13 +55,9 @@ project:
         - file: examples/automated-cds-import.ipynb
         - file: examples/worldpop-import.ipynb
     - file: contribute.md
-      hidden: true
     - file: about.md
-      hidden: true
     - file: data-engineer.md
-      hidden: true
     - file: data-scientist.md
-      hidden: true
     - file: glossary.md
     - file: resources.md
   references:
