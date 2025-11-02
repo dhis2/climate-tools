@@ -65,6 +65,10 @@ footer.article a:hover {
   color: white !important;
 }
 
+.dark .dhis2-header a:after {
+  content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjciPjxwYXRoIGZpbGw9IndoaXRlIiBkPSJNNyAwdjRINlYxLjcwN0wxLjM1MyA2LjM1NGwtLjcwOC0uNzA4TDUuMjkyIDFIM1YweiIvPjwvc3ZnPg==");
+}
+
 /* Remove transparency of site header */
 .backdrop-blur {
   background-color: white;
