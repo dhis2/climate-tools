@@ -95,7 +95,8 @@ footer.article a:hover {
   }
 }
 /* Move main content down due to DHIS2 header */
-article > main > div > div:first-child {
+article > main > div > div:first-child,
+main > article > div > div:first-child {
   margin-top: 20px !important;
 }
 
