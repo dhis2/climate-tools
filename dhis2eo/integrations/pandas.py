@@ -1,7 +1,7 @@
 from datetime import datetime
 import pandas as pd
 
-from ..utilities.time import detect_period_type, YEAR, MONTH, WEEK, DAY
+from ..utils.time import detect_period_type, YEAR, MONTH, WEEK, DAY
 
 def parse_period(period_value):
     '''Convert pandas period or datetime values to DHIS2 period type'''
@@ -11,6 +11,12 @@ def parse_period(period_value):
     if period_type == DAY:
         period_obj = pd.Period(period_value, freq='D')
         return period_obj.strftime('%Y%m%d')
+    elif period_type == MONTH:
+        period_obj = pd.Period(period_value, freq='M')
+        return period_obj.strftime('%Y%m')
+    elif period_type == YEAR:
+        period_obj = pd.Period(period_value, freq='Y')
+        return period_obj.strftime('%Y')
     else:
         raise NotImplementedError(f'Period type {period_type} not yet supported')
 
@@ -32,6 +38,9 @@ def dataframe_to_dhis2_json(df, data_element_id, org_unit_col, period_col, value
 
     # add dataElement column
     df_subset['dataElement'] = data_element_id
+
+    # remove nan values
+    df_subset = df_subset[~pd.isna(df_subset['value'])]
 
     # convert to list of dicts
     data = df_subset.to_dict(orient='records')

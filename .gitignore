@@ -9,7 +9,7 @@ _build
 build/
 dist/
 
-test/data/
+tests/test_outputs/
 
 # Sri Lanka data files
 sri-lanka-provinces.geojson
