@@ -7,6 +7,10 @@ site:
 
 This page describes guidelines if you're a developer or want to contribute back to Climate Tools.
 
+## Share your use case
+
+We advise you to start by adding a new topic in this category of our Community of Practice: [Development > Climate Tools](https://community.dhis2.org/c/development/climate-tools/93). Describe what you want to achieve, and how you plan to implement it. This will allow us to have a discussion around the topic, which tools to use, and how we can make it generic and reusable to benefit our community. After this initial discussion you should be ready to start with the implementation.
+
 ## Developer setup
 
 If you're a developer who wants to contribute to Climate Tools, we recommend fetching the latest main branch on Github and installing directly from source (development mode):

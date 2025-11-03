@@ -50,13 +50,13 @@ Get started
 ::::
 
 ::::{card}
-:url: /contribute
+:url: https://community.dhis2.org/c/development/climate-tools/93
 :::{image} ./images/contribute.svg
 :height: 70px
 :::
-**Contribute**
+**Community**
 
-We welcome contributions to DHIS2 Climate Tools.
+Share your ideas and get help and feedback.
 
 Get started
 ::::
