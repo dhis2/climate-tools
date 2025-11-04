@@ -241,7 +241,7 @@ class WorldPop(Manager):
                 except OSError:
                     pass
 
-        return local_path if download else None
+        return local_path if download else href if not plot else None
 
 
 class HTMLDict(dict):
