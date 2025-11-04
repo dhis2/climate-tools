@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/dhis2/climate-tools.git"
   },
-  "homepage": "https://dhis2.github.io/climate-tools",
+  "homepage": "https://climate-tools.dhis2.org",
   "scripts": {
     "start": "jupyter-book start",
     "toc": "jupyter book init --write-toc"
