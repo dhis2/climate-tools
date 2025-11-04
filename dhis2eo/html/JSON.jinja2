@@ -1,47 +1,47 @@
 {% import 'Macros.jinja2' as macros %}
 
 <style>
-.pystac-summary {
+.dhis2eo-summary {
     cursor: pointer;
     display: list-item;
     list-style: revert;
     margin-bottom: 0 !important;
 
-    .pystac-l {
+    .dhis2eo-l {
         padding-left: 0.5em;
         color: rgb(64, 128, 128);
         font-style: italic;
     }
 }
-.pystac-row {
+.dhis2eo-row {
     overflow-wrap: break-word;
     padding-left: .825em;
 
-    .pystac-k {
+    .dhis2eo-k {
         display: inline-block;
         margin: 0px 0.5em 0px 0px;
     }
-    .pystac-v {
+    .dhis2eo-v {
         color: rgb(186, 33, 33);
     }
 }
-.pystac-k {
+.dhis2eo-k {
     color: rgb(0, 128, 0);
     font-weight: 700;
 }
-.pystac-wrap {
+.dhis2eo-wrap {
   display: block !important;
 }
-.pystac-text-repr-fallback {
+.dhis2eo-text-repr-fallback {
   /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
   display: none;
 }
 </style>
 <div>
-<div class="pystac-text-repr-fallback">
+<div class="dhis2eo-text-repr-fallback">
     {{ plain }}
 </div>
-<div class="jp-RenderedJSON jp-mod-trusted jp-OutputArea-output pystac-wrap" style='display:none'>
+<div class="jp-RenderedJSON jp-mod-trusted jp-OutputArea-output dhis2eo-wrap" style='display:none'>
     <div class="container" style="line-height: normal;">
         <ul style="padding: 0px; margin: 0px; list-style: none; display: block;">
             {% for key, value in dict.items() %}
