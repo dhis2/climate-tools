@@ -1,5 +1,3 @@
-from functools import lru_cache
-
 from .html_dict import HTMLDict
 from .worldpop_asset import WorldPopAsset
 

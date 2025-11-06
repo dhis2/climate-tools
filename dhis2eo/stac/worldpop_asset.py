@@ -1,11 +1,9 @@
 from .html_dict import HTMLDict
 
-import os, re, tempfile, requests
-import rasterio
-from rasterio.mask import mask as rio_mask
-from rasterio.plot import plotting_extent
-import matplotlib.pyplot as plt
+import os, requests
+import rasterio as rio
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class WorldPopAsset(HTMLDict):
@@ -45,9 +43,9 @@ class WorldPopAsset(HTMLDict):
         return local_path
 
     def _plot_from_path(self, path, polygon=None):
-        with rasterio.open(path) as src:
+        with rio.open(path) as src:
             if polygon:
-                out_image, out_transform = rio_mask(src, [polygon], crop=True)
+                out_image, out_transform = rio.mask.mask(src, [polygon], crop=True)
                 band = out_image[0].astype(float)
             else:
                 band = src.read(1).astype(float)
@@ -57,7 +55,7 @@ class WorldPopAsset(HTMLDict):
             if nodata is not None:
                 band[band == nodata] = np.nan
 
-            extent = plotting_extent(band, out_transform)
+            extent = rio.plot.plotting_extent(band, out_transform)
             plt.figure(figsize=(8, 6))
             plt.imshow(band, cmap="viridis", extent=extent)
             plt.colorbar(label="Population")
