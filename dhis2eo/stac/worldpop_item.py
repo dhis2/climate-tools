@@ -27,14 +27,17 @@ class WorldPopItem(HTMLDict):
         super().__init__(metadata)
 
     def list_asset_properties(self):
-        values = {k: set() for k in WorldPopAsset.ASSET_PROPERTIES}
-        for asset in self["assets"].values():
-            for key in WorldPopAsset.ASSET_PROPERTIES:
-                key_wprefix = f"{WorldPopAsset.ASSET_PROPERTIES_PREFIX}:{key}"
-                if key_wprefix in asset and asset[key_wprefix]:
-                    values[key].add(asset[key_wprefix])
-        values = {k: sorted(v) for k, v in values.items()}
-        return HTMLDict(values)
+        if self["properties"]["project"] == "Population":
+            return HTMLDict({})
+        if self["properties"]["project"] == "Age and Sex Structures":
+            values = {k: set() for k in WorldPopAsset.ASSET_PROPERTIES}
+            for asset in self["assets"].values():
+                for key in WorldPopAsset.ASSET_PROPERTIES:
+                    key_wprefix = f"{WorldPopAsset.ASSET_PROPERTIES_PREFIX}:{key}"
+                    if key_wprefix in asset and asset[key_wprefix]:
+                        values[key].add(asset[key_wprefix])
+            values = {k: sorted(v) for k, v in values.items()}
+            return HTMLDict(values)
     
     def search_assets(self, sexes=None, sex_labels=None, age_groups=None, age_labels=None):
         
@@ -82,6 +85,9 @@ class WorldPopItem(HTMLDict):
     def get_asset(self, sex=None, sex_label=None, age_group=None, age_label=None):
                 
         search = self.search_assets(sex, sex_label, age_group, age_label)
+        
+        if self["properties"]["project"] == "Population":
+            return search['assets']['data']
        
         if search["count"] == 0:
             raise ValueError(f"No asset found for parameters.")
