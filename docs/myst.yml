@@ -54,6 +54,7 @@ project:
       children:
         - file: examples/automated-cds-import.ipynb
         - file: examples/worldpop-import.ipynb
+        - file: examples/stac-read.ipynb
     - file: contribute.md
     - file: about.md
     - file: data-engineer.md
