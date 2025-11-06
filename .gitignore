@@ -12,9 +12,7 @@ dist/
 tests/test_outputs/
 
 # Sri Lanka data files
-sri-lanka-provinces.geojson
-pm_final_srilanka_linearp.nc
-lka_pop_2023_CN_1km_R2025A_UA_v1.tif
+docs/cicero/data/
 
 # Virtual environments
 .venv/
