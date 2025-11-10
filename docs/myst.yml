@@ -57,7 +57,9 @@ project:
     - file: contribute.md
     - file: about.md
     - file: data-engineer.md
+      hidden: true
     - file: data-scientist.md
+      hidden: true
     - file: glossary.md
     - file: resources.md
   references:
