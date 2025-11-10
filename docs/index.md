@@ -24,7 +24,7 @@ DHIS2 Climate Tools contain open source libraries and workflows based on the Pyt
 
 +++ {"kind": "logo-cloud", "class": "dhis2-users"}
 
-:::::{grid} 2 2 3 3
+:::::{grid} 1 2 3 3
 ::::{card}
 :url: /data-engineer
 :::{image} ./images/data-engineers.svg
