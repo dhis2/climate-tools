@@ -32,7 +32,12 @@ project:
     - title: Getting data
       file: getting-data/intro.md
       children:
-        - file: getting-data/climate-data-store.ipynb
+        - file: getting-data/climate-data-store/intro.md
+          children:
+          - file: getting-data/climate-data-store/era5-download.ipynb
+        - file: getting-data/worldpop/intro.md
+          children:
+          - file: getting-data/worldpop/worldpop-download.ipynb
     - title: Data analysis
       file: analysis/intro.md
       children:
@@ -49,11 +54,6 @@ project:
       file: import-data/intro.md
       children:
         - file: import-data/using-python-client.ipynb
-    - title: Example workflows
-      file: examples/intro.md
-      children:
-        - file: examples/automated-cds-import.ipynb
-        - file: examples/worldpop-import.ipynb
     - file: contribute.md
     - file: about.md
     - file: data-engineer.md
