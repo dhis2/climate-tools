@@ -37,7 +37,7 @@ project:
           - file: getting-data/climate-data-store/era5-download.ipynb
         - file: getting-data/worldpop/intro.md
           children:
-          - file: getting-data/worldpop/worldpop-download.ipynb
+          - file: getting-data/worldpop/worldpop-total-download.ipynb
     - title: Data analysis
       file: analysis/intro.md
       children:
