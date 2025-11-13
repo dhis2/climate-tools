@@ -1,6 +1,6 @@
 ---
-title: Download org units from DHIS2 Maps
-short_title: Download from DHIS2 Maps
+title: Manually download org units from DHIS2
+short_title: Manual Download
 ---
 
 Organisation units can easily be downloaded in GeoJSON format from DHIS2 Maps:
