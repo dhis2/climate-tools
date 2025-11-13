@@ -15,8 +15,8 @@ handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s')
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
-def get_population_data(year, iso3):
-    '''Downloads or gets from cache 100m data from worldpop v2 with estimates from 2015-2030'''
+def get(year, iso3):
+    '''Downloads or gets 100m population count data from worldpop v2 with estimates from 2015-2030'''
     
     # get iso3 from orgunits? 
     # ... 
