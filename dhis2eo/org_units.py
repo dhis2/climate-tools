@@ -13,12 +13,15 @@ import random
 
 # TODO: check and handle org units with different coordinate projections
 
-def from_file(path, **kwargs):
+def from_file(path, dhis2=False, **kwargs):
     if str(path).endswith(('.geojson', '.json')):
         # load from geojson file
         with open(path) as fobj:
             geojson = json.load(fobj)
-            org_units = from_geojson(geojson, **kwargs)
+            if dhis2:
+                org_units = from_dhis2_geojson(geojson, **kwargs)
+            else:
+                org_units = from_geojson(geojson, **kwargs)
     
     elif str(path).endswith('.shp'):
         # load from shapefile

@@ -24,6 +24,10 @@ DEFAULT_DAILY_ERA5_DATA_DICT = {
     'daily_mean': ['2m_temperature'], 
     'daily_sum': ['total_precipitation'], 
 }
+DEFAULT_HOURLY_ERA5_LAND_VARIABLES = [
+    '2m_temperature',
+    'total_precipitation',
+]
 
 # Try to fix cache issue by setting download threads to 1
 config = earthkit.data.config
@@ -140,3 +144,42 @@ def download_daily_era5_data(year, month, org_units=None, bbox=None, data_dict=N
             merged += data
     # return
     return merged
+
+def download_hourly_era5_land_data(year, month, org_units=None, bbox=None, variables=None, days=None):
+    '''Download hourly era5-land data'''
+    # TODO: maybe support downloading a whole year, since it's allowed for this dataset... 
+    # TODO: maybe support not specifying a subregion/area to get the whole world, but unnecessary...? 
+    # get default variables
+    variables = variables or DEFAULT_HOURLY_ERA5_LAND_VARIABLES
+    # get or calculate bbox
+    if bbox is None:
+        if org_units is not None:
+            bbox = list(org_units.total_bounds)
+        else:
+            raise Exception('Either org_units or bbox have to be set')
+    # extract the coordinates from input bounding box
+    xmin,ymin,xmax,ymax = bbox
+    # construct the query parameters
+    days = days or [day for day in range(1, last_day)]
+    days = [str(day).zfill(2) for day in days]
+    params = {
+        #"product_type": "reanalysis-era5-land",
+        "variable": variables,
+        "year": str(year),
+        "month": [str(month).zfill(2)],
+        "day": days,
+        "time": [f'{str(h).zfill(2)}:00' for h in range(0, 23+1)],
+        "area": [ymax, xmin, ymin, xmax], # notice how we reordered the bbox coordinate sequence
+        "data_format": "netcdf",
+        "download_format": "unarchived",
+    }
+    _,last_day = calendar.monthrange(year, month) # TODO: check if last day include the last day, then we have to add +1 in the range below
+    # download the data
+    logger.info(f'Downloading data from CDS API...')
+    logger.info(f'Request parameters: \n{json.dumps(params)}')
+    data = earthkit.data.from_source("cds",
+        "reanalysis-era5-land",
+        **params
+    )
+    # return
+    return data

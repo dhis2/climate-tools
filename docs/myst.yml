@@ -24,6 +24,11 @@ project:
         - file: tools/earthkit.md
         - file: tools/dhis2eo.md
         - file: tools/dhis2-python-client.md
+    - title: Users
+      file: data-engineer.md
+      children:
+        - file: data-engineer.md
+        - file: data-scientist.md
     - title: Organisation units
       file: org-units/intro.md
       children:
@@ -49,6 +54,7 @@ project:
     - title: Data aggregation
       file: aggregation/intro.md
       children:
+        - file: aggregation/time-period-aggregation.ipynb
         - file: aggregation/org-unit-aggregation.ipynb
     - title: Import data to DHIS2
       file: import-data/intro.md
