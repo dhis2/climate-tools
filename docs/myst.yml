@@ -24,6 +24,11 @@ project:
         - file: tools/earthkit.md
         - file: tools/dhis2eo.md
         - file: tools/dhis2-python-client.md
+    - title: Users
+      file: data-engineer.md
+      children:
+        - file: data-engineer.md
+        - file: data-scientist.md
     - title: Organisation units
       file: org-units/intro.md
       children:
@@ -57,10 +62,6 @@ project:
         - file: import-data/using-python-client.ipynb
     - file: contribute.md
     - file: about.md
-    - file: data-engineer.md
-      hidden: true
-    - file: data-scientist.md
-      hidden: true
     - file: glossary.md
     - file: resources.md
   references:

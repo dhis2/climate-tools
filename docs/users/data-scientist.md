@@ -1,4 +1,5 @@
 ---
+orphan: true
 title: Data scientist
 subtitle: Get started with Climate Tools
 site:
