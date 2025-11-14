@@ -25,10 +25,10 @@ project:
         - file: tools/dhis2eo.md
         - file: tools/dhis2-python-client.md
     - title: Users
-      file: data-engineer.md
+      file: users/data-engineer.md
       children:
-        - file: data-engineer.md
-        - file: data-scientist.md
+        - file: users/data-engineer.md
+        - file: users/data-scientist.md
     - title: Organisation units
       file: org-units/intro.md
       children:
