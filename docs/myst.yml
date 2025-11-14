@@ -25,7 +25,7 @@ project:
         - file: tools/dhis2eo.md
         - file: tools/dhis2-python-client.md
     - title: Users
-      file: users/data-engineer.md
+      file: users/index.md
       children:
         - file: users/data-engineer.md
         - file: users/data-scientist.md
