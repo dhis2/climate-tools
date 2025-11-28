@@ -1,21 +1,13 @@
 import json
 import logging
 import calendar
-import sys
-
 import earthkit.data
 import xarray as xr
 
-from ..utils import netcdf_cache
+from ..utils import netcdf_cache, force_logging
 
 logger = logging.getLogger(__name__)
-
-# Since this module is so download centric, force all info logs to be printed
-handler = logging.StreamHandler(sys.stdout)
-handler.setLevel(logging.INFO)
-handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+force_logging(logger)
 
 DEFAULT_VARIABLES = [
     '2m_temperature',

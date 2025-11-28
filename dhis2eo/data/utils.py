@@ -9,12 +9,15 @@ import xarray as xr
 
 logger = logging.getLogger(__name__)
 
-# Since this module is so download centric, force all info logs to be printed
-handler = logging.StreamHandler(sys.stdout)
-handler.setLevel(logging.INFO)
-handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+def force_logging(logger):
+    # Since data modules are so download centric, force all info logs to be printed
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(logging.Formatter('%(name)s - %(levelname)s - %(message)s'))
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+force_logging(logger)
 
 def netcdf_cache(cache_dir=None):
     """Cache xarray results to disk as netcdf using module + function name in key."""
