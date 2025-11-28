@@ -6,7 +6,7 @@ import os
 
 import xarray as xr
 
-from ..utils import netcdf_cache, force_logging
+from ...utils import netcdf_cache, force_logging
 
 logger = logging.getLogger(__name__)
 force_logging(logger)
