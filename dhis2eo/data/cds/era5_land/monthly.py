@@ -17,7 +17,7 @@ DEFAULT_VARIABLES = [
 config = earthkit.data.config
 config.set('number-of-download-threads', 1)
 
-@netcdf_cache
+@netcdf_cache()
 def get(years, months, org_units=None, bbox=None, variables=None):
     '''Download monthly era5-land data'''
 
