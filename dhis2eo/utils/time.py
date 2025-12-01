@@ -19,3 +19,15 @@ def detect_period_type(s):
     else:
         return None
     
+def iter_months(start_year, start_month, end_year, end_month):
+    for year in range(start_year, end_year+1):
+        for month in range(1, 12+1):
+            
+            # skip months before or after our defined time range
+            if (year,month) < (start_year,start_month):
+                continue
+            if (year,month) > (end_year,end_month):
+                continue
+
+            # yield iter
+            yield year, month
