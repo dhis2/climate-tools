@@ -19,21 +19,14 @@ config = earthkit.data.config
 config.set('number-of-download-threads', 1)
 
 @netcdf_cache()
-def get(year, month, org_units=None, bbox=None, variables=None, days=None):
+def get(year, month, bbox, variables=None, days=None):
     '''Download hourly era5-land data'''
 
     # get default variables
     variables = variables or DEFAULT_VARIABLES
-
-    # get or calculate bbox
-    if bbox is None:
-        if org_units is not None:
-            bbox = list(org_units.total_bounds)
-        else:
-            raise Exception('Either org_units or bbox have to be set')
         
     # extract the coordinates from input bounding box
-    xmin,ymin,xmax,ymax = bbox
+    xmin,ymin,xmax,ymax = map(float, bbox)
 
     # construct the query parameters
     _,last_day = calendar.monthrange(year, month)
