@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "earthkit-data[netcdf,geotiff,geopandas,projection,cds]",
-    "earthkit-transforms",
+    "earthkit-transforms>=0.5",
     "earthkit-plots",
     "dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git",
 ]
