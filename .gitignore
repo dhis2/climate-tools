@@ -17,3 +17,6 @@ tests/test_outputs/
 docs/src/data/pm_final_srilanka_linearp.nc
 docs/src/data/sri-lanka-provinces.geojson
 docs/data/local/
+
+# TODO: Remove when cicero data is finalized
+docs/cicero
