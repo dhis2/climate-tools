@@ -4,7 +4,7 @@
 
 DHIS2 Climate Tools is a documentation and tutorial project that helps users integrate climate, weather, and environmental data with DHIS2 (a health information system) and the Chap Modeling Platform. The project focuses on **documentation in the `docs/` folder**, which is built as a Jupyter Book 2 website.
 
-**Important:** The `dhis2eo` Python package folder will be moved to a separate repository. Focus all work on the documentation in the `docs/` folder.
+**Important:** The `dhis2eo` Python package folder is planned to be moved to a separate repository in the future. For now, focus all work on the documentation in the `docs/` folder.
 
 ### Key Purpose
 - Provide tutorials and workflows for climate-health data integration
@@ -38,7 +38,7 @@ DHIS2 Climate Tools is a documentation and tutorial project that helps users int
 ## Repository Structure
 
 ```
-/home/runner/work/climate-tools/climate-tools/
+climate-tools/                     # Repository root
 ├── docs/                          # Main documentation folder (FOCUS HERE)
 │   ├── myst.yml                   # Table of contents and site configuration
 │   ├── package.json               # Node dependencies for Jupyter Book
@@ -155,7 +155,7 @@ Notebooks are the primary way to create interactive tutorials:
 **Local preview workflow:**
 ```bash
 # From repository root, navigate to docs folder
-cd /home/runner/work/climate-tools/climate-tools/docs
+cd docs
 
 # Install Jupyter Book (if not already installed)
 npm install
