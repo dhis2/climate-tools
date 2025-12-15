@@ -176,7 +176,9 @@ jupyter-book build --html
 
 **Automatic deployment:**
 - Pushes to `main` branch trigger `.github/workflows/deploy.yml`
-- Site deploys to GitHub Pages at https://dhis2.github.io/climate-tools/
+- Site deploys to GitHub Pages and is accessible at:
+  - https://dhis2.github.io/climate-tools/ (GitHub Pages URL)
+  - https://climate-tools.dhis2.org (custom domain)
 
 ### Linting and Code Quality
 
