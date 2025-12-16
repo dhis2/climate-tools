@@ -60,7 +60,9 @@ project:
     - title: Import data to DHIS2
       file: import-data/intro.md
       children:
-        - file: import-data/using-python-client.ipynb
+        - file: import-data/prepare-metadata.ipynb
+        - file: import-data/basics-python-client-import.ipynb
+        - file: import-data/example-import-dhis2-daily.ipynb
     - file: contribute.md
     - file: about.md
     - file: glossary.md
