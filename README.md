@@ -1,9 +1,29 @@
-# Climate Tools
+# DHIS2 Climate Tools
 
-**Climate Tools** is the umbrella project for working with DHIS2 and environmental / climate-related data.  
-It includes online documentation, guides, tutorials, and the `dhis2eo` Python package and CLI tool.
+**DHIS2 Climate Tools** is an educational website containing interactive Jupyter notebooks and resources for exploring and integrating climate-related data with DHIS2.  
 
-- For a quick introduction to the project, see the [Introduction page](docs/intro.md).
-- To install `dhis2eo` package for Python and CLI, see the [Installation page](docs/getting-started/installation.md).
-- For documentation on how to use `dhis2eo` and other workflows, see https://dhis2.github.io/climate-tools.
-- To get started as a contributor, see the [How to Contribute page](docs/contribute.md).
+The site is designed for public health professionals, data scientists, and researchers who want to explore, visualize, analyze, and harmonize climate datasets into DHIS2. 
+
+Notebooks include:
+- Importing and processing DHIS2 climate datasets  
+- Visualizing and analyzing climate data
+- Performing reproducible analyses for research or policy support
+
+
+## Versions
+
+This educational website is updated periodically to include new contents or bug fixes. Each version of the site is pinned to specific dependencies to ensure reproducibility. You can run the notebooks locally. 
+
+- **v2025.0** – Python 3.10, JupyterLab 4.x
+
+
+## Quickstart
+
+To reproduce a specific version:
+
+```bash
+git clone https://github.com/dhis2/climate-tools
+git checkout v2025.1
+pip install -r requirements.txt
+jupyter lab
+```
