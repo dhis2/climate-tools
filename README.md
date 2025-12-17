@@ -1,6 +1,8 @@
-# DHIS2 Climate Tools
+# DHIS2 Climate Tools Guidebook
 
-**DHIS2 Climate Tools** is an educational website containing interactive Jupyter notebooks and resources for exploring and integrating climate-related data with DHIS2.  
+**Latest version:** ![version](https://img.shields.io/github/v/release/dhis2/climate-tools)
+
+**DHIS2 Climate Tools Guidebook** is an educational website containing interactive Jupyter notebooks and resources for exploring and integrating climate-related data with DHIS2.  
 
 The site is designed for public health professionals, data scientists, and researchers who want to explore, visualize, analyze, and harmonize climate datasets into DHIS2. 
 
@@ -12,14 +14,14 @@ Notebooks include:
 
 ## Versions
 
-This educational website is updated periodically to include new contents or bug fixes. Each version of the site is pinned to specific dependencies to ensure reproducibility. You can run the notebooks locally. 
+This educational website is updated periodically to include new contents or bug fixes. Each version of the site is pinned to specific dependencies to ensure reproducibility: 
 
-- **v2025.0** – Python 3.10, JupyterLab 4.x
+- **v2025.0** – Python 3.10 (not released yet)
 
 
 ## Quickstart
 
-To reproduce a specific version:
+You can download this repository to run the notebooks locally. To reproduce a specific version:
 
 ```bash
 git clone https://github.com/dhis2/climate-tools
