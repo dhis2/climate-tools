@@ -2,18 +2,34 @@
 title: Installation
 ---
 
-The Climate Tools Python library are distributed under the package name **`dhis2eo`**. 
 
-The library has been developed and tested on **Python 3.11**. We recommend using this version for best compatibility, though other versions may also work. 
+## Download the notebooks
 
-To install the Climate Tools Python library you need to install the `dhis2eo` Python package. 
+All the notebooks and tutorials from the [online DHIS2 Climate Tools guidebook](https://climate-tools.dhis2.org/) are contained inside the [DHIS2 Climate Tools GitHub repository](https://github.com/dhis2/climate-tools). To run these notebooks on your local computer, you first have to git clone the repository:
 
-Until we release a stable version, you can install it directly from the latest Github repository:
+    git clone https://github.com/dhis2/climate-tools
 
-        $ pip install git+https://github.com/dhis2/climate-tools
 
-The installation includes all necessary dependencies, including relevant components from [earthkit](../tools/earthkit.md) and [dhis2-python-client](../tools/dhis2-python-client.md).
+## Choose a version branch
 
-Once installed, you can verify that it installed correctly in a Python session:
+This educational website is updated periodically to include new contents or bug fixes. Each version of the site is pinned to specific dependencies to ensure reproducibility. 
 
-        >>> import dhis2eo
+To make sure you are running a stable tested version of the guidebook, checkout the specific version branch that you want to explore, e.g.:
+
+    git checkout v2025.1
+
+Below is a list of available version branches that you can checkout:
+
+- **v2025.1** – Python 3.10 (not released yet)
+
+
+## Install the necessary dependencies
+
+To setup the necessary environment required to run the notebooks, you can write:
+
+    pip install -r requirements.txt
+
+
+## Running the notebooks
+
+Now you should have what you need to run the Jupyter notebooks. See our [guide for getting started with Jupyter](jupyter.md). 

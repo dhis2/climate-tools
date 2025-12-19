@@ -11,21 +11,4 @@ Notebooks include:
 - Visualizing and analyzing climate data
 - Performing reproducible analyses for research or policy support
 
-
-## Versions
-
-This educational website is updated periodically to include new contents or bug fixes. Each version of the site is pinned to specific dependencies to ensure reproducibility: 
-
-- **v2025.0** – Python 3.10 (not released yet)
-
-
-## Quickstart
-
-You can download this repository to run the notebooks locally. To reproduce a specific version:
-
-```bash
-git clone https://github.com/dhis2/climate-tools
-git checkout v2025.1
-pip install -r requirements.txt
-jupyter lab
-```
+To download the notebooks and run them on your local computer, see our [installation guide](getting-started/installation.md). 
