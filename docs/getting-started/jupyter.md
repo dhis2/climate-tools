@@ -2,11 +2,11 @@
 title: Jupyter Notebooks
 ---
 
-On this page we show how to get started exploring and running the DHIS2 Climate Tools interactive guides and tutorials for yourself. 
+This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook tutorials and end-to-end workflows.
 
-We specifically show how to run the notebooks using the classical Jupyter interface, but it's also possible to use any preferred tool such as the [VSCode Jupyter notebook extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter). 
+Specifically we describe how to run the notebooks using the classical Jupyter interface, but it's also possible to use any preferred tool such as the [VSCode Jupyter notebook extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter). 
 
-If you have not already downloaded the notebooks and setup the environment, first follow our [installation guide](installation.md).
+If you have not already downloaded the DHIS2 Climate Tools toolkit or setup the provided Python environment, first follow our [installation guide](installation.md). 
 
 
 ## Installing Jupyter

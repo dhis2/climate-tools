@@ -5,7 +5,7 @@ site:
   hide_toc: true
 ---
 
-This page describes guidelines if you're a developer and want to contribute back to the online DHIS2 Climate Tools guidebook. 
+This page describes guidelines if you're a developer and want to contribute back to the DHIS2 Climate Tools. 
 
 
 ## Share your use case
@@ -15,7 +15,7 @@ We advise you to start by adding a new topic in this category of our Community o
 
 ## Notebook contributions
 
-We want the DHIS2 Climate Tools educational guidebook to be a collaborative collection of user-contributions in the form of Jupyter notebooks, e.g. if you have developed useful scripts or workflows showcasing how to execute common climate operations and workflows. In these cases we ask that you create this as an interactive Jupyter Notebook that guides others through the workflow, executes code, and visualizes results if relevant.
+We want DHIS2 Climate Tools to be a collaborative collection of user-contributions in the form of Jupyter notebooks, e.g. if you have developed useful scripts or workflows showcasing how to execute common climate operations and workflows. In these cases we ask that you create this as an interactive Jupyter Notebook that guides others through the workflow, executes code, and visualizes results if relevant.
 
 Here's a step-by-step guide:
 
@@ -72,12 +72,12 @@ Here's a step-by-step guide:
 
 9. Follow along the conversation on your PR, and make any requested changes.  
 
-10. Once the PR is accepted, your contribution will be shown as part of the online guidebook at [climate-tools.dhis2.org](climate-tools.dhis2.org) the next time we release a new version. 
+10. Once the PR is accepted, your contribution will be included as part the DHIS2 Climate Tools collection of workflows at [climate-tools.dhis2.org](climate-tools.dhis2.org) the next time we release a new version. 
 
 
 ## Code contributions
 
-We also welcome code contributions to any of our libraries that we develop and maintain: 
+We also welcome code contributions to any of the libraries that we develop and maintain: 
 
 - [dhis2eo](https://climate-tools.dhis2.org/tools/dhis2eo/)
 - [dhis2-python-client](https://github.com/dhis2/dhis2-python-client)

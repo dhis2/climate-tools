@@ -5,14 +5,13 @@ site:
   hide_toc: true
 ---
 
-DHIS2 Climate Tools is an online educational guidebook containing training materials and reproducible workflows for using open source libraries to access, process and upload
-climate, weather and environmental data to [DHIS2](https://dhis2.org/) and the [Chap Modeling Platform](https://dhis2-chap.github.io/chap-site/).
+DHIS2 Climate Tools is an open, collaborative toolkit for building climate, weather, and environmental data workflows with DHIS2. The toolkit provides implementers with a flexible workspace that includes a curated Python environment, practical tutorials, and end-to-end workflows for accessing, processing, and uploading climate, weather, and environmental data to [DHIS2](https://dhis2.org/) and the [Chap Modeling Platform](https://dhis2-chap.github.io/chap-site/). 
 
 ```{figure} images/climate-tools-data-flow.png
 :align: left
 ```
 
-The guidebook is based on the [Python](https://www.python.org/) programming language and ecosystem. Python is the leading programming language for geospatial analysis, offering a rich ecosystem of libraries and tools that we can build on. It allows us to make complex spatial operations accessible to both beginners and experts.
+The toolkit is based on the [Python](https://www.python.org/) programming language and ecosystem. Python is the leading programming language for geospatial analysis, offering a rich ecosystem of libraries and tools that DHIS2 Climate Tools builds on. This makes complex spatial operations accessible to both beginners and advanced users.
 
 The DHIS2 Climate Tools guidebook has two primary users:
 
