@@ -2,7 +2,7 @@
 title: Jupyter Notebooks
 ---
 
-This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook tutorials and end-to-end workflows.
+This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook guides and end-to-end example workflows.
 
 Specifically we describe how to run the notebooks using the classical Jupyter interface, but it's also possible to use any preferred tool such as the [VSCode Jupyter notebook extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter). 
 
@@ -49,7 +49,7 @@ We recommend running the notebook step by step, which you can do by clicking eac
 
 ## Next steps
 
-In this tutorial we have shown how to get started with the notebooks already provided in the Climate Tools repository. 
+In this tutorial we have shown how to get started with the notebooks already provided in the DHIS2 Climate Tools repository. 
 
 You can also create your own notebooks for exploring data or executing common workflows. We aim to gather a collection of user-contributed notebooks for useful climate and health workflows:
 

@@ -1,8 +1,6 @@
 ---
 title: How to contribute
 short_title: Contribute
-site:
-  hide_toc: true
 ---
 
 This page describes guidelines if you're a developer and want to contribute back to the DHIS2 Climate Tools. 

@@ -1,5 +1,3 @@
 # Getting started
 
-To get started with the DHIS2 Climate Tools tutorials and workflows, or to build your own workflows, these pages will guide you through setting up a working environment with the recommended tools. 
-
-If you have already implemented your own workflows and want to contribute these back to the DHIS2 Climate Tools, see instead our [guide for how to contribute](../contribute.md). 
+To get started with the DHIS2 Climate Tools guides and example workflows, or to build your own, these pages will guide you through setting up a working environment. They also provide a gentle introduction to key GIS concepts, an overview of the tools included in the toolkit, and guidance on different user profiles and where to begin. 

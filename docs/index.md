@@ -18,9 +18,9 @@ An open, collaborative toolkit for accessing, processing, and uploading climate,
 
 +++ { "kind": "centered", "class": "dhis2-centered" }
 
-### Flexible, open source guides and tutorials
+### Flexible, open source guides and examples
 
-DHIS2 Climate Tools is an open-source, collaborative Python toolkit that combines a curated Python environment, practical tutorials, and end-to-end workflows for integrating climate, weather, and environmental data into DHIS2. The toolkit gives users a ready-to-use environment for exploring, analyzing, visualizing, and importing global and local data sources. In this way, Climate Tools helps break climate and health data out of silos, enabling combined climate–health analysis, forecasting, and the development of climate-resilient health systems.
+DHIS2 Climate Tools is an open-source, collaborative Python toolkit that combines a curated Python environment, practical how-to guides, and end-to-end example workflows for integrating climate, weather, and environmental data into DHIS2. The toolkit gives users a ready-to-use environment for exploring, analyzing, visualizing, and importing global and local data sources. In this way, Climate Tools helps break climate and health data out of silos, enabling combined climate–health analysis, forecasting, and the development of climate-resilient health systems.
 
 +++ {"kind": "logo-cloud", "class": "dhis2-users"}
 
