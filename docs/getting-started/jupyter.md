@@ -1,24 +1,17 @@
 ---
-title: Jupyter Notebooks
+title: Intro to Notebooks
 ---
 
 This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook guides and end-to-end example workflows.
 
 Specifically we describe how to run the notebooks using the classical Jupyter interface, but it's also possible to use any preferred tool such as the [VSCode Jupyter notebook extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter). 
 
-If you have not already downloaded the DHIS2 Climate Tools toolkit or setup the provided Python environment, first follow our [installation guide](installation.md). 
-
-
-## Installing Jupyter
-
-Jupyter can be installed with:
-
-    pip install jupyter
+If you have not already downloaded the DHIS2 Climate Tools toolkit or setup the provided Python environment, first follow our [installation guide](installation.md). This also includes the Jupyter package needed to follow the steps described next. 
 
 
 ## Start the Jupyter Server
 
-Start the Jupyter server at the root of the downloaded repository folder, which will give you an overview of the folder contents:
+Start the Jupyter server at the root of the downloaded repository folder, which will give you an overview of the folder contents: 
 
     cd path/to/local/repo
     jupyter lab
