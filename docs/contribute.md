@@ -39,10 +39,10 @@ Here's a step-by-step guide:
     - Add an entry linking to your notebook in the Examples section:
 
       ```
-    - title: Examples
-      children:
-        ...
-        - file: examples/your-folder/your-custom-notebook.ipynb
+        - title: Examples
+          children:
+            ...
+            - file: examples/your-folder/your-custom-notebook.ipynb
       ```
 
 6. Preview the updated website locally.
@@ -50,7 +50,7 @@ Here's a step-by-step guide:
     - The online documentation is built using Jupyter Book (https://next.jupyterbook.org).
     - To preview the documentation locally you need to install Jupyter Book v2:
 
-            pip install --pre "jupyter-book==2.\*"
+            pip install --pre "jupyter-book==2.*"
 
     - After installing the dependencies you have to first navigate to the `docs` folder:
 
