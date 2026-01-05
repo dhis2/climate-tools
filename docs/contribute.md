@@ -13,7 +13,7 @@ We advise you to start by adding a new topic in this category of our Community o
 
 ## Notebook contributions
 
-We want DHIS2 Climate Tools to be a collaborative collection of user-contributions in the form of Jupyter notebooks, e.g. if you have developed useful scripts or workflows showcasing how to execute common climate operations and workflows. In these cases we ask that you create this as an interactive Jupyter Notebook that guides others through the workflow, executes code, and visualizes results if relevant.
+We want DHIS2 Climate Tools to be a collaborative collection of user-contributed example workflows in the form of Jupyter notebooks, e.g. if you have developed useful scripts or workflows showcasing how to execute common climate operations and workflows. In these cases we ask that you create this as an interactive Jupyter Notebook that takes the reader through the workflow, executes code, and visualizes results if relevant.
 
 Here's a step-by-step guide:
 
@@ -28,20 +28,21 @@ Here's a step-by-step guide:
 4. Write your Jupyter Notebook.
 
     - See our guide for [Getting started with Jupyter](getting-started/jupyter.md).
-    - Place your notebook file in the relevant section of the documentation, e.g. `docs/aggregation`.
-    - Make sure that all relevant data files are added to the `docs/data` folder, or retrieved from online sources.
+    - Place your notebook file in a new folder inside the `examples` folder of the documentation, e.g. `docs/examples/your-folder`.
+    - Make sure that all relevant data files are included in your example folder, or retrieved from online sources.
         - **Important:** Make sure that the files are not very large (>50MB) and does not contain sensitive or private data. 
     - Run all cells in your notebook before submitting to verify that everything works and the outputs are up-to-date.
 
 5. Add your notebook to the documentation page tree.
 
-    - Open the file `docs/myst.yml` - this defines the structure of the online documentation and the pages shown in the side menu.
-    - Add an entry to your notebook in the relevant section (alternatively, suggest a new section):
+    - Open the file `docs/toc.yml` - this defines the structure of the online documentation and the pages shown in the side menu.
+    - Add an entry linking to your notebook in the Examples section:
 
       ```
-      - title: Data aggregation
-        children:
-            - file: aggregation/your-custom-notebook.ipynb
+    - title: Examples
+      children:
+        ...
+        - file: examples/your-folder/your-custom-notebook.ipynb
       ```
 
 6. Preview the updated website locally.
