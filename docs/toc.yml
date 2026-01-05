@@ -61,7 +61,7 @@ project:
     - title: Examples
       file: examples/intro.md
       children:
-        - file: examples/import-dhis2-daily.ipynb
+        - file: examples/import-era5/import-era5-daily.ipynb
 
     - file: contribute.md
     - file: about.md
