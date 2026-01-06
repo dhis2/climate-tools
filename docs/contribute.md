@@ -1,9 +1,9 @@
 ---
-title: How to contribute
+title: How to Contribute
 short_title: Contribute
 ---
 
-This page describes guidelines if you're a developer and want to contribute back to the DHIS2 Climate Tools. 
+This page provides guidance for anyone who wants to contribute, share, or enhance the DHIS2 Climate Tools.
 
 
 ## Share your use case
@@ -28,7 +28,7 @@ Here's a step-by-step guide:
 4. Write your Jupyter Notebook.
 
     - See our guide for [Getting started with Jupyter](getting-started/jupyter.md).
-    - Place your notebook file in a new folder inside the `examples` folder of the documentation, e.g. `docs/examples/your-folder`.
+    - Place your notebook file in a new folder inside the `workflows` folder of the documentation, e.g. `docs/workflows/your-folder`.
     - Make sure that all relevant data files are included in your example folder, or retrieved from online sources.
         - **Important:** Make sure that the files are not very large (>50MB) and does not contain sensitive or private data. 
     - Run all cells in your notebook before submitting to verify that everything works and the outputs are up-to-date.
@@ -36,13 +36,13 @@ Here's a step-by-step guide:
 5. Add your notebook to the documentation page tree.
 
     - Open the file `docs/toc.yml` - this defines the structure of the online documentation and the pages shown in the side menu.
-    - Add an entry linking to your notebook in the Examples section:
+    - Add an entry linking to your notebook in the Workflows section:
 
       ```
-        - title: Examples
+        - title: Workflows
           children:
             ...
-            - file: examples/your-folder/your-custom-notebook.ipynb
+            - file: workflows/your-folder/your-custom-notebook.ipynb
       ```
 
 6. Preview the updated website locally.

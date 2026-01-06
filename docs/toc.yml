@@ -1,4 +1,14 @@
 version: 1
+
+site:
+  nav:
+    - title: Guides
+      url: /guides/intro
+    - title: Contribute
+      url: /contribute
+    - title: About
+      url: /about
+
 project:
   toc:
     - file: index.md
@@ -58,25 +68,12 @@ project:
             - file: guides/import-data/prepare-metadata.ipynb
             - file: guides/import-data/basics-python-client-import.ipynb
 
-    - title: Examples
-      file: examples/intro.md
+    - title: Workflows
+      file: workflows/intro.md
       children:
-        - file: examples/import-era5/import-era5-daily.ipynb
+        - file: workflows/import-era5/import-era5-daily.ipynb
 
     - file: contribute.md
     - file: about.md
     - file: glossary.md
     - file: resources.md
-
-site:
-  nav:
-    - title: Getting started
-      url: /getting-started/intro
-    - title: Guides
-      url: /guides/intro
-    - title: Examples
-      url: /examples/intro
-    - title: Contribute
-      url: /contribute
-    - title: About
-      url: /about

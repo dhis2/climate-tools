@@ -14,7 +14,8 @@ An open, collaborative toolkit for accessing, processing, and uploading climate,
 
 ![](/images/climate-tools-illustration.png)
 
-{button}`Learn more <./about>`
+{button}`Get Started <./getting-started/intro>`
+{button}`Learn More <./about>`
 
 +++ { "kind": "centered", "class": "dhis2-centered" }
 

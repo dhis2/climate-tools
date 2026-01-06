@@ -7,7 +7,7 @@
 The toolkit is designed for public health professionals, data scientists, and researchers who want to explore, visualize, analyze, and harmonize climate datasets into DHIS2. 
 
 Notebooks include:
-- Importing and processing DHIS2 climate datasets
+- Processing climate datasets and import to DHIS2
 - Visualizing and analyzing climate data
 - Performing reproducible analyses for research or policy support
 
