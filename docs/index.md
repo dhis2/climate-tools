@@ -103,7 +103,7 @@ Learn more
 ::::
 
 ::::{card}
-:url: https://dhis2-chap.github.io/chap-site/
+:url: https://chap.dhis2.org/
 :::{image} ./images/chap-logo.svg
 :class: dark:hidden
 :height: 70px
