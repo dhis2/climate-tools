@@ -57,6 +57,7 @@ project:
       children:
         - file: aggregation/time-period-aggregation.ipynb
         - file: aggregation/org-unit-aggregation.ipynb
+        - file: aggregation/population-weighting.ipynb
     - title: Import data to DHIS2
       file: import-data/intro.md
       children:
