@@ -41,6 +41,9 @@ project:
           children:
           - file: getting-data/climate-data-store/api-authentication.md
           - file: getting-data/climate-data-store/era5-download.ipynb
+        - file: getting-data/climate-hazards-center/intro.md
+          children:
+          - file: getting-data/climate-hazards-center/chirps3-download.ipynb
         - file: getting-data/worldpop/intro.md
           children:
           - file: getting-data/worldpop/worldpop-total-download.ipynb
