@@ -1,0 +1,83 @@
+version: 1
+
+site:
+  nav:
+    - title: Guides
+      url: /guides/intro
+    - title: Contribute
+      url: /contribute
+    - title: About
+      url: /about
+
+project:
+  toc:
+    - file: index.md
+    
+    - title: Getting Started
+      file: getting-started/intro.md
+      children:
+        - file: getting-started/installation.md
+        - file: getting-started/jupyter.md
+        - file: getting-started/intro-to-gis.ipynb
+        - title: Tools
+          file: getting-started/tools/intro.md
+          children:
+            - file: getting-started/tools/earthkit.md
+            - file: getting-started/tools/dhis2eo.md
+            - file: getting-started/tools/dhis2-python-client.md
+        - title: Users
+          file: getting-started/users/intro.md
+          children:
+            - file: getting-started/users/data-engineer.md
+            - file: getting-started/users/data-scientist.md
+
+    - title: Guides
+      file: guides/intro.md
+      children:
+        - title: Organisation units
+          file: guides/org-units/intro.md
+          children:
+            - file: guides/org-units/download-manual.md
+            - file: guides/org-units/download-web-api.ipynb
+        - title: Getting data
+          file: guides/getting-data/intro.md
+          children:
+            - file: guides/getting-data/climate-data-store/intro.md
+              children:
+              - file: guides/getting-data/climate-data-store/api-authentication.md
+              - file: guides/getting-data/climate-data-store/era5-download.ipynb
+            - file: guides/getting-data/climate-hazards-center/intro.md
+              children:
+              - file: guides/getting-data/climate-hazards-center/chirps3-download.ipynb
+            - file: guides/getting-data/worldpop/intro.md
+              children:
+              - file: guides/getting-data/worldpop/worldpop-total-download.ipynb
+        - title: Data analysis
+          file: guides/analysis/intro.md
+          children:
+            - file: guides/analysis/climate-normals.ipynb
+        - title: Data visualization
+          file: guides/visualization/intro.md
+          children:
+            - file: guides/visualization/temperature.ipynb
+        - title: Data aggregation
+          file: guides/aggregation/intro.md
+          children:
+            - file: guides/aggregation/time-period-aggregation.ipynb
+            - file: guides/aggregation/org-unit-aggregation.ipynb
+            - file: guides/aggregation/population-weighting.ipynb
+        - title: Import data to DHIS2
+          file: guides/import-data/intro.md
+          children:
+            - file: guides/import-data/prepare-metadata.ipynb
+            - file: guides/import-data/basics-python-client-import.ipynb
+
+    - title: Workflows
+      file: workflows/intro.md
+      children:
+        - file: workflows/import-era5/import-era5-daily.ipynb
+
+    - file: contribute.md
+    - file: about.md
+    - file: glossary.md
+    - file: resources.md

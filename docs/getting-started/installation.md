@@ -2,18 +2,55 @@
 title: Installation
 ---
 
-The Climate Tools Python library are distributed under the package name **`dhis2eo`**. 
 
-The library has been developed and tested on **Python 3.11**. We recommend using this version for best compatibility, though other versions may also work. 
+## Prerequisites
 
-To install the Climate Tools Python library you need to install the `dhis2eo` Python package. 
+Before you get started with DHIS2 Climate Tools, make sure you have the following installed:
 
-Until we release a stable version, you can install it directly from the latest Github repository:
+- [Git](https://git-scm.com/) – for cloning repositories and managing updates
+- Optional: [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) – recommended for managing a reproducible Python environment
 
-        $ pip install git+https://github.com/dhis2/climate-tools
 
-The installation includes all necessary dependencies, including relevant components from [earthkit](../tools/earthkit.md) and [dhis2-python-client](../tools/dhis2-python-client.md).
+## Download the DHIS2 Climate Tools toolkit
 
-Once installed, you can verify that it installed correctly in a Python session:
+DHIS2 Climate Tools is available as a [single GitHub repository](https://github.com/dhis2/climate-tools), which contains:
 
-        >>> import dhis2eo
+- A ready-to-use Python environment to get you started working with climate data and DHIS2
+- All How-to Guides and Reference Workflows from the [website](https://climate-tools.dhis2.org/) as interactive Jupyter notebooks
+
+To download the toolkit to your local machine, clone the repository:
+
+    git clone https://github.com/dhis2/climate-tools
+
+
+## Choose a release version
+
+The DHIS2 Climate Tools is updated periodically to include new resources or bug fixes. Each release version of the toolkit is pinned to specific dependencies to ensure reproducibility. 
+
+See all available releases on GitHub: [DHIS2 Climate Tools Releases](https://github.com/dhis2/climate-tools/releases)
+
+For example, to checkout release v2026.1:
+
+    git fetch --tags
+    git checkout v2026.1
+
+
+## Setup the environment
+
+Make sure your Python version matches the version of the toolkit you are using (check the `python-version.txt` file in the release to see which Python version to use). 
+
+If you are using Miniconda, create and activate a new environment. For example, if your version of DHIS2 Climate Tools requires Python 3.10:
+
+    conda create -n climate-tools python=3.10
+    conda activate climate-tools
+
+Next, install the required dependencies:
+
+    pip install -r requirements.txt
+
+
+## Running the notebooks
+
+You’re now ready to explore the included How-to Guides and Reference Workflows, or create your own Jupyter notebooks for climate and health data workflows.
+
+For help getting started with Jupyter Notebooks, see our [Jupyter guide](jupyter.md).
