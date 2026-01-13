@@ -12,6 +12,9 @@ Data engineer
 Data scientist
 : Analyzes large datasets to extract valuable insights, build models, and help organizations make better decisions.
 
+Temperature anomaly
+: The deviation of temperature from a baseline or reference value, typically the climate normal. Positive anomalies indicate warmer than normal conditions, while negative anomalies indicate cooler than normal conditions. Temperature anomalies are essential for tracking climate trends and variations over time.
+
 earthkit
 : An open-source Python project led by ECMWF, providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more. [More information](https://ecmwf.github.io/earthkit-website/)
 
