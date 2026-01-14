@@ -2,5 +2,5 @@ earthkit-transforms>=0.5
 earthkit-plots
 dhis2eo @ git+https://github.com/dhis2/dhis2eo.git
 dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git
-xclim
+metpy
 jupyter
