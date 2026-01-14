@@ -12,10 +12,16 @@ site:
 
 An open, collaborative toolkit for accessing, processing, and uploading climate, weather and environmental data to DHIS2 and the Chap Modeling Platform. 
 
-![](/images/climate-tools-illustration.png)
-
 {button}`Get Started <./getting-started/intro>`
 {button}`Learn More <./about>`
+
+![](/images/climate-tools-illustration.png)
+
+<a href="https://github.com/dhis2/climate-tools/releases/latest">
+  <img src="https://img.shields.io/github/v/release/dhis2/climate-tools"
+        alt="Latest release"
+        style="">
+</a>
 
 +++ { "kind": "centered", "class": "dhis2-centered" }
 
