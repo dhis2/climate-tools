@@ -17,12 +17,6 @@ An open, collaborative toolkit for accessing, processing, and uploading climate,
 
 ![](/images/climate-tools-illustration.png)
 
-<a href="https://github.com/dhis2/climate-tools/releases/latest">
-  <img src="https://img.shields.io/github/v/release/dhis2/climate-tools"
-        alt="Latest release"
-        style="">
-</a>
-
 +++ { "kind": "centered", "class": "dhis2-centered" }
 
 ### Flexible, open source guides and examples
