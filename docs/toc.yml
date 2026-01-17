@@ -46,6 +46,7 @@ project:
               children:
               - file: guides/getting-data/climate-data-store/api-authentication.md
               - file: guides/getting-data/climate-data-store/era5-download.ipynb
+              - file: guides/getting-data/climate-data-store/download-with-earthkit.ipynb
             - file: guides/getting-data/climate-hazards-center/intro.md
               children:
               - file: guides/getting-data/climate-hazards-center/chirps3-download.ipynb
