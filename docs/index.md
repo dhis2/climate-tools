@@ -27,7 +27,7 @@ DHIS2 Climate Tools is an open-source, collaborative Python toolkit that combine
 
 :::::{grid} 1 2 3 3
 ::::{card}
-:url: /users/data-engineer
+:url: /guides/users/data-engineer
 :::{image} ./images/data-engineers.svg
 :height: 70px
 :::
@@ -39,7 +39,7 @@ Get started
 ::::
 
 ::::{card}
-:url: /users/data-scientist
+:url: /guides/users/data-scientist
 :::{image} ./images/data-scientists.svg
 :height: 70px
 :::

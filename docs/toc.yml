@@ -25,15 +25,15 @@ project:
             - file: getting-started/tools/earthkit.md
             - file: getting-started/tools/dhis2eo.md
             - file: getting-started/tools/dhis2-python-client.md
-        - title: Users
-          file: getting-started/users/intro.md
-          children:
-            - file: getting-started/users/data-engineer.md
-            - file: getting-started/users/data-scientist.md
 
     - title: Guides
       file: guides/intro.md
       children:
+        - title: Starter guides
+          file: guides/users/intro.md
+          children:
+            - file: guides/users/data-engineer.md
+            - file: guides/users/data-scientist.md
         - title: Organisation units
           file: guides/org-units/intro.md
           children:
