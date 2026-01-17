@@ -78,6 +78,7 @@ project:
       children:
         - file: workflows/import-era5/import-era5-daily.ipynb
         - file: workflows/import-chirps3/import-chirps3-daily.ipynb
+        - file: workflows/import-worldpop/import-pop-yearly.ipynb
 
     - file: contribute.md
     - file: about.md
