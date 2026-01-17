@@ -1,4 +1,4 @@
-# Users
+# Starter guides
 
 Climate tools can be used by different users for different purposes. To help you get started quickly, we’ve grouped the most relevant guides for each type of user: 
 
