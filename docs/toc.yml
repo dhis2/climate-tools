@@ -70,7 +70,7 @@ project:
           file: guides/import-data/intro.md
           children:
             - file: guides/import-data/prepare-metadata.ipynb
-            - file: guides/import-data/basics-python-client-import.ipynb
+            - file: guides/import-data/import-data-values.ipynb
 
     - title: Workflows
       file: workflows/intro.md
