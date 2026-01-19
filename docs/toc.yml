@@ -18,19 +18,11 @@ project:
       children:
         - file: getting-started/installation.md
         - file: getting-started/jupyter.md
-        - file: getting-started/intro-to-gis.ipynb
-        - title: Tools
-          file: getting-started/tools/intro.md
-          children:
-            - file: getting-started/tools/earthkit.md
-            - file: getting-started/tools/dhis2eo.md
-            - file: getting-started/tools/dhis2-python-client.md
 
     - title: Guides
       file: guides/intro.md
       children:
-        - title: Starter guides
-          file: guides/users/intro.md
+        - file: guides/users/intro.md
           children:
             - file: guides/users/data-engineer.md
             - file: guides/users/data-scientist.md
@@ -39,7 +31,7 @@ project:
           children:
             - file: guides/org-units/download-manual.md
             - file: guides/org-units/download-web-api.ipynb
-        - title: Getting data
+        - title: Download data
           file: guides/getting-data/intro.md
           children:
             - file: guides/getting-data/climate-data-store/intro.md
@@ -79,6 +71,14 @@ project:
         - file: workflows/import-era5/import-era5-daily.ipynb
         - file: workflows/import-chirps3/import-chirps3-daily.ipynb
         - file: workflows/import-worldpop/import-pop-yearly.ipynb
+
+    - file: tools/intro.md
+      children:
+        - file: tools/dhis2eo.md
+        - file: tools/dhis2-python-client.md
+        - file: tools/xarray.md
+        - file: tools/geopandas.md
+        - file: tools/earthkit.md
 
     - file: contribute.md
     - file: about.md
