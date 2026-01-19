@@ -3,7 +3,7 @@ title: Reference Workflows
 short_title: Workflows
 ---
 
-On these pages you will find a collection of reference workflows showing complete, end-to-end example workflows that show how climate, weather, and environmental data can be integrated into DHIS2 for real-world use cases. Each workflow brings together multiple steps, from data access and processing to analysis and upload, using the tools and practices recommended in the toolkit.
+DHIS2 Climate Tools maintains a collection of reference workflows showing complete, end-to-end example workflows that show how climate, weather, and environmental data can be integrated into DHIS2 for real-world use cases. Each workflow brings together multiple steps, from data access and processing to analysis and upload, using the tools and practices recommended in the toolkit.
 
 The workflows are fully reproducible and can be adapted or extended to fit local contexts, making them a starting point for building your own climate and health data pipelines.
 
