@@ -71,7 +71,7 @@ Here's a step-by-step guide:
 
 9. Follow along the conversation on your PR, and make any requested changes.  
 
-10. Once the PR is accepted, your contribution will be included as part the DHIS2 Climate Tools collection of workflows at [climate-tools.dhis2.org](climate-tools.dhis2.org) the next time we release a new version. 
+10. Once the PR is accepted, your contribution will be included as part the DHIS2 Climate Tools collection of workflows, and be made available at [climate-tools.dhis2.org](climate-tools.dhis2.org). 
 
 
 ## Code contributions
