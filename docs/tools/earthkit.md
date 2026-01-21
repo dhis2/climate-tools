@@ -1,6 +1,6 @@
 # earthkit
 
-[Earthkit](https://ecmwf.github.io/earthkit-website/) is a new open-source Python project led by the [European Centre for Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/), providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more.
+[earthkit](https://ecmwf.github.io/earthkit-website/) is a new open-source Python project led by the [European Centre for Medium-Range Weather Forecasts (ECMWF)](https://www.ecmwf.int/), providing powerful tools for speeding up weather and climate science workflows by simplifying data access, processing, analysis, visualisation and much more.
 
 `earthkit` offers multiple interoperable software components built on top of well-established open-source Python libraries like numpy, pandas and matplotlib.
 
@@ -8,7 +8,7 @@
 :align: left
 ```
 
-We use [earthkit-data](https://earthkit-data.readthedocs.io/) to access and download climate data from from online data services and APIs, [earthkit-transform](https://earthkit-transforms.readthedocs.io/) to aggregate climate data to DHIS2 organisation units ([see example](../aggregation/earthkit-netcdf.ipynb)). We also use [earthkit-plots](https://earthkit-plots.readthedocs.io/) for producing high quality visualisations of weather and climate data.
+We use [earthkit-data](https://earthkit-data.readthedocs.io/) to access and download climate data from from online data services and APIs, [earthkit-transform](https://earthkit-transforms.readthedocs.io/) to aggregate climate data to DHIS2 organisation units ([see example](/guides/aggregation/org-unit-aggregation)). We also use [earthkit-plots](https://earthkit-plots.readthedocs.io/) for producing high quality visualisations of weather and climate data.
 
 Short video series that introduces earthkit:
 

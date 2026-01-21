@@ -10,7 +10,7 @@ site:
 
 ## DHIS2 Climate Tools
 
-An open, collaborative toolkit for accessing, processing, and uploading climate, weather and environmental data to DHIS2 and the Chap Modeling Platform. 
+An open, collaborative toolkit for accessing, processing, and uploading climate, weather and environmental data to DHIS2 and the Chap Modeling Platform.
 
 {button}`Get Started <./getting-started/intro>`
 {button}`Learn More <./about>`
