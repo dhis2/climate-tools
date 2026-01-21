@@ -1,4 +1,4 @@
-# Libraries
+# Tools
 
 DHIS2 Climate Tools brings together a set of Python-based geospatial and climate analysis libraries that are commonly used throughout the guides and workflows in this toolkit.
 
