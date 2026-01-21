@@ -4,7 +4,7 @@
 
 The [DHIS2 Python Client](https://github.com/dhis2/dhis2-python-client) is a lightweight yet powerful library designed to connect DHIS2 with the wider data science ecosystem.
 
-It was built to meet the needs of **data practitioners, analysts, and program managers** who rely on DHIS2 as a cornerstone of their information systems. While many climate, environmental, or socio-economic datasets may come from outside DHIS2, this client ensures that DHIS2 data can be **easily accessed, integrated, and contributed back**. Used alongside other climate-tools, it becomes part of a broader ecosystem that brings diverse data sources together for harmonization, orchestration, analysis, and ultimately decision making.
+It was built to meet the needs of **data practitioners, analysts, and program managers** who rely on DHIS2 as a cornerstone of their information systems. While many climate, environmental, or socio-economic datasets may come from outside DHIS2, this client ensures that DHIS2 data can be **easily accessed, integrated, and contributed back**. Used alongside other climate tools, it becomes part of a broader ecosystem that brings diverse data sources together for harmonization, orchestration, analysis, and ultimately decision making.
 
 The client makes it simple to **pull** data out of DHIS2 for analysis and **push** curated results back into DHIS2 for use in dashboards, decision making, or further integration.
 
@@ -25,11 +25,12 @@ Metadata management adds another hurdle: creating or updating data elements, dat
 
 ## Getting started
 
-The library is packaged as part of the `climate-tools` ecosystem but if you want to use it outside the `cliamte-tools`, installation instructions and other details are available from the [DHIS2 Python Client GitHub repository](https://github.com/dhis2/dhis2-python-client).
+The library is packaged as part of the Climate Tools ecosystem but if you want to use it outside the Climate Tools, installation instructions and other details are available from the [DHIS2 Python Client GitHub repository](https://github.com/dhis2/dhis2-python-client).
 
 Below are some examples using the library:
 
-- [Working with organisation units](../org-units/getting-web-api.ipynb)
+- [Prepare metadata for import into DHIS2](/guides/import-data/prepare-metadata)
+- [Importing data values using dhis2-python-client](/guides/import-data/import-data-values)
 
 ---
 
@@ -37,4 +38,4 @@ Below are some examples using the library:
 
 The DHIS2 Python Client serves as a **bridge between DHIS2 and the wider data ecosystem**.
 
-It makes it easier to **pull data from DHIS2** and **push results back in**, helping position DHIS2 as part of integrated information systems. On its own it improves access and efficiency; combined with other climate-tools, it supports the broader goal of **harmonizing diverse datasets into useful evidence** for better programs and more resilient policies.
+It makes it easier to **pull data from DHIS2** and **push results back in**, helping position DHIS2 as part of integrated information systems. On its own it improves access and efficiency; combined with other Climate Tools, it supports the broader goal of **harmonizing diverse datasets into useful evidence** for better programs and more resilient policies.
