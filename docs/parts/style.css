@@ -94,11 +94,6 @@ footer.article a:hover {
     padding-top: 20px !important;
   }
 }
-/* Move main content down due to DHIS2 header */
-article > main > div > div:first-child,
-main > article > div > div:first-child {
-  margin-top: 20px !important;
-}
 
 /* Adjust styles for banner section on landing page */
 .dhis2-banner {
@@ -140,7 +135,7 @@ main > article > div > div:first-child {
 
 /* Climate Tools users */
 .dhis2-users {
-  padding-top: 0;
+  padding-top: 20px;
   padding-bottom: 0;
 }
 
