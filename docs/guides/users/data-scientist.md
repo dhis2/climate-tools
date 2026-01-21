@@ -9,6 +9,6 @@ Useful content for data scientists:
 
 1. [Install DHIS2 Climate Tools](/getting-started/installation)
 2. [Intro to Notebooks](/getting-started/jupyter)
-3. [Download data](/getting-data/intro)
-4. [Data analysis](/analysis/intro)
-5. [Data visualization](/visualization/intro)
+3. [Download data](/guides/getting-data/intro)
+4. [Data analysis](/guides/analysis/intro)
+5. [Data visualization](/guides/visualization/intro)

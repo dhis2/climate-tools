@@ -8,7 +8,7 @@ Data engineers can use DHIS2 Climate Tools to integration climate and environmen
 Useful content for data engineers:
 
 1. [Install DHIS2 Climate Tools](/getting-started/installation)
-2. [Getting organisation units from DHIS2](/org-units/getting-web-api)
-3. [Download data](/getting-data/intro)
-4. [Aggregating data to organisation units](/visualization/intro)
-5. [Import data to DHIS2](/import-data/intro)
+1. [Getting organisation units from DHIS2](/guides/org-units/download-web-api)
+1. [Download data](/guides/getting-data/intro)
+1. [Data aggregation](/guides/aggregation/intro)
+1. [Import data to DHIS2](/guides/import-data/intro)
