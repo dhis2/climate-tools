@@ -269,3 +269,12 @@ footer.article a:hover {
 .dark .dhis2-justified .myst-card-body {
   background-color: transparent;
 }
+
+.my-5 {
+  margin-top: 0 !important;
+}
+
+.article :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+.article :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 1em;
+}
