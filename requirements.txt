@@ -1,6 +1,6 @@
 earthkit-transforms>=0.5
 earthkit-plots
-dhis2eo @ git+https://github.com/dhis2/dhis2eo.git
-dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git
+dhis2eo @ git+https://github.com/dhis2/dhis2eo.git@v1.0.0
+dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@v0.3.0
 metpy
 jupyter

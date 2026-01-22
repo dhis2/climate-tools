@@ -1,5 +1,5 @@
 ---
-title: Intro to Notebooks
+title: Working with Notebooks
 ---
 
 This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook guides and end-to-end example workflows.
@@ -15,7 +15,7 @@ Start the Jupyter server at the root of the downloaded repository folder, which 
     cd path/to/local/repo
     jupyter lab
 
-**Note**: It's important that `jupyter` and the required dependencies are installed to the same virtual environment (e.g. in `venv` or `conda`), and that you activate this environment before you run `jupyter lab`. This will ensure that Jupyter uses the correct Python version with all the necessary dependencies installed.
+**Note**: It's important that you activate the `climate-tools` environment from the previous [installation step](installation.md) before you run `jupyter lab`. This will ensure that Jupyter uses the correct Python version with all the necessary dependencies installed.
 
 ## Browse the Notebooks
 
