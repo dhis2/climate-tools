@@ -7,9 +7,10 @@ title: Installation
 
 Before you get started with DHIS2 Climate Tools, make sure you have the following installed:
 
-- [Git](https://git-scm.com/) – for cloning repositories and managing updates
-- Python ≥ 3.10 (provided either by Miniconda or a system Python installation)
-    - Recommended: [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) for managing a reproducible Python environment
+- [Git](https://git-scm.com/) – for cloning repositories and managing updates.
+- [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) for managing a reproducible Python environment.
+
+The installation instructions on this page have only been tested to work on **Python 3.11**.
 
 ## Download the DHIS2 Climate Tools toolkit
 
@@ -26,15 +27,16 @@ The DHIS2 Climate Tools is updated on a continuous basis to update the notebooks
 
 ## Setup the environment
 
-If you are using Miniconda, create and activate a new environment, for example:
+First, use `conda` create and activate the Python environment:
 
-    conda create -n climate-tools python=3.13
+    conda create -n climate-tools python=3.11
     conda activate climate-tools
 
-Next, install the required dependencies:
+Install the dependencies in this order:
 
+    conda install pymeeus
+    conda install -c conda-forge jupyterlab ipywidgets jupyterlab_widgets
     pip install -r requirements.txt
-
 
 ## Running the notebooks
 
