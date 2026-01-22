@@ -1,0 +1,45 @@
+name: platform-support
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  install-python-versions-windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.10, 3.11, 3.12, 3.13]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: ${{ matrix.python-version }}
+          activate-environment: climate-tools
+          environment-file: ""
+
+      - name: Create conda environment
+        shell: bash -l {0}
+        run: |
+          conda create -n climate-tools python=${{ matrix.python-version }} -y
+
+      - name: Install conda packages
+        shell: bash -l {0}
+        run: |
+          conda activate climate-tools
+          conda install pymeeus -y
+          conda install -c conda-forge jupyterlab ipywidgets jupyterlab_widgets -y
+
+      - name: Install pip packages
+        shell: bash -l {0}
+        run: |
+          conda activate climate-tools
+          pip install --only-binary=:all: -r requirements.txt
