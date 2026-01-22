@@ -9,6 +9,9 @@ Before you get started with DHIS2 Climate Tools, make sure you have the followin
 
 - [Git](https://git-scm.com/) – for cloning repositories and managing updates.
 - [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) for managing a reproducible Python environment.
+    - Follow the [installation instructions](https://www.anaconda.com/docs/getting-started/miniconda/install).
+    - Run `conda init --all` in your terminal.
+    - Restart your terminal for the changes to take effect.
 
 The installation instructions on this page have only been tested to work on **Python 3.11**.
 
