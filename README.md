@@ -9,4 +9,4 @@ Notebooks include:
 - Visualizing and analyzing climate data
 - Performing reproducible analyses for research or policy support
 
-To download the notebooks and setup the environment needed to run them on your local computer, see our [installation guide](getting-started/installation.md). 
+To download the notebooks and setup the environment needed to run them on your local computer, see our [installation guide](docs/getting-started/installation.md). 
