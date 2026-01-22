@@ -1,4 +1,4 @@
-# DHIS2 Climate Tools
+# DHIS2 Climate Tools &#127757;
 
 **DHIS2 Climate Tools** is an open, collaborative toolkit containing a reference Python environment, interactive Jupyter notebooks, and other resources for exploring and integrating climate-related data with DHIS2. 
 
