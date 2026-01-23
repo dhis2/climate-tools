@@ -13,3 +13,6 @@ dist/
 .venv/
 .env/
 docs/guides/data/local/
+docs/workflows/data/local/
+docs/workflows/scheduling/example/import-era5-daily.ipynb
+docs/workflows/scheduling/example/requirements.txt

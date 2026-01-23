@@ -1,0 +1,19 @@
+# Force the timezone for all cron jobs in this file
+TZ=Europe/Oslo
+
+# Force the shell to bash (standardizes behavior)
+SHELL=/bin/bash
+
+# Add the Python/Pip installation path
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# ====================================================
+# Define one or more commands to be run at a schedule
+# Format is: {CRONPATTERN} {COMMAND}
+# The > /proc/1/fd/1 2>&1 at the end redirects the cron logs to Docker logs
+
+# Cron heartbeat and container time
+* * * * * echo "Cron is alive at $(date)" > /proc/1/fd/1
+
+# Run ERA5 import for temperature at 02:00
+46 16 * * * papermill /app/import-era5-daily.ipynb /app/import-era5-daily.output.ipynb -f /app/params.yaml > /proc/1/fd/1 2>&1

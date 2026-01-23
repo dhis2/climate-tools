@@ -1,0 +1,16 @@
+services:
+  schedule:
+    build: .
+    image: climate-scheduler:latest     # Explicit image name
+    container_name: climate-scheduler   # Explicit container name
+    environment:
+      - TZ=Europe/Oslo                  # Set your local timezone here
+    volumes:
+      - .:/app                          # Links current folder content to app folder
+      - ~/.cdsapirc:/root/.cdsapirc:ro  # Links the CDS API key to root user folder
+    command: >
+      sh -c "
+        crontab /app/cronfile &&
+        cron &&
+        tail -f /dev/null
+      "
