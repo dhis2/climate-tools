@@ -7,4 +7,5 @@ earthkit-plots==0.3.*
 dhis2eo @ git+https://github.com/dhis2/dhis2eo.git@v1.0.0
 dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@a2761be2727fb6b44e2e0c5d2d25adf4b0ef7747
 metpy>=1.7,<2
-jupyter>=1.1.1,<2
+jupyter>=1.1,<2
+papermill>=2.6,<3
