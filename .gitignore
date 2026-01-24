@@ -13,3 +13,7 @@ dist/
 .venv/
 .env/
 docs/guides/data/local/
+create_env.bat
+
+# Data and test outputs
+tests/outputs/

@@ -9,3 +9,4 @@ dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@a2761be2727f
 metpy>=1.7,<2
 jupyter>=1.1,<2
 papermill>=2.6,<3
+pytest>=8.3,<9
