@@ -13,7 +13,9 @@ Before you get started with DHIS2 Climate Tools, make sure you have the followin
     - Run `conda init --all` in your terminal.
     - Restart your terminal for the changes to take effect.
 
-The installation instructions on this page have only been tested to work on **Python 3.11**.
+## Supported Python versions
+
+The DHIS2 Climate Tools supports the following Python versions: **Python 3.10, 3.11, 3.12, and 3.13**.
 
 ## Download the DHIS2 Climate Tools toolkit
 
@@ -30,9 +32,9 @@ The DHIS2 Climate Tools is updated on a continuous basis to update the notebooks
 
 ## Setup the environment
 
-First, use `conda` to create and activate the Python environment:
+First, use `conda` to create and activate the Python environment. For example, to setup an environment using Python 3.13:
 
-    conda create -n climate-tools python=3.11
+    conda create -n climate-tools python=3.13
     conda activate climate-tools
 
 Install the dependencies in this order:
