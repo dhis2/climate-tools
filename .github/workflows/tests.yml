@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  install-python-versions-windows:
+  install-and-test-windows:
     runs-on: windows-latest
     strategy:
       fail-fast: false
