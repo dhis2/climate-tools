@@ -14,4 +14,6 @@ Notebooks include:
 
 To download the notebooks and setup the environment needed to run them on your local computer, see our [installation guide](docs/getting-started/installation.md). 
 
-See [this developer note](TESTING.md) for how to run notebook tests. 
+Check the [commit history](https://github.com/dhis2/climate-tools/commits/main) for the latest changes, and follow our guide on [how to update](docs/getting-started/updating.md) your existing installation to the latest version.
+
+See [this developer note](TESTING.md) for details on how the notebooks are tested and verified.
