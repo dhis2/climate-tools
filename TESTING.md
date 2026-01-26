@@ -1,6 +1,6 @@
 # Testing
 
-To ensure that the notebooks are always working, we use [pytest](https://docs.pytest.org/en/stable/) to execute and verify that the notebooks don't unexpectingly break. 
+To ensure that the notebooks are always working, we use [pytest](https://docs.pytest.org/en/stable/) to execute and verify that the notebooks don't unexpectedly break. 
 
 The notebooks are automatically executed using the [tests GitHub Action](.github/workflows/tests.yml) on pushes and pull requests
 to the `main` branch. Notebooks are run across all [supported Python versions](docs/getting-started/installation.md#supported-python-versions) to ensure compatibility and reproducibility.

@@ -40,7 +40,7 @@ def ignore_notebook(nb):
         # unfinished notebooks
         return True
     else:
-        # dont ignore
+        # don't ignore
         return False
 
 ALL_NOTEBOOKS = [nb for nb in ALL_NOTEBOOKS if not ignore_notebook(nb)]
