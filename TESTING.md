@@ -26,14 +26,28 @@ In this document you will find details on how the tests work, and how to run the
 
 ## Running Tests
 
-By default `pytest` only runs `fast` notebooks that don't download any data:
+By default `pytest` only runs `fast` notebooks that primarily loads data from files in `data` folder:
 
 ```bash
 pytest --notebook-kernel=<name-of-env> -vv
 ```
 
-`Slow` tests that download data have to be specified manually (not tested and unlikely to succeed):
+To run integration tests for data downloads (reuses cache if previously downloaded):
 
 ```bash
-pytest tests/test_notebooks.py::test_slow_notebooks --notebook-kernel=<name-of-env> -vv
+pytest -m "integration and data_download" --notebook-kernel=<name-of-env> -vv
 ```
+
+To run integration tests for full import workflows (requires creating and setting data element ids first):
+
+```bash
+pytest -m "integration and full_import" --notebook-kernel=<name-of-env> -vv
+```
+
+To run all the integration tests:
+
+```bash
+pytest -m integration --notebook-kernel=<name-of-env> -vv
+```
+
+After testing, executed copies of notebooks are written to `tests/outputs/` for inspection and debugging only; these output notebooks are not intended to be re-run. 

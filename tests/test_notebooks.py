@@ -1,4 +1,5 @@
 from pathlib import Path
+from itertools import groupby
 
 import pytest
 import papermill
@@ -21,7 +22,7 @@ ALL_NOTEBOOKS = GUIDES_NOTEBOOKS + WORKFLOWS_NOTEBOOKS
 # ignore notebooks
 
 SKIP_NOTEBOOKS = [
-    "import-data-values.ipynb",
+    #"import-data-values.ipynb",
     "prepare-metadata.ipynb",
 ]
 
@@ -48,24 +49,27 @@ ALL_NOTEBOOKS = [nb for nb in ALL_NOTEBOOKS if not ignore_notebook(nb)]
 
 # group notebooks
 
-def is_slow(nb):
+def notebook_type(nb):
     if "getting-data" in nb.parts:
         # notebooks for downloading data
-        return True
+        return "data_download"
     elif "workflows" in nb.parts:
         # end-to-end import workflows
-        return True
+        return "full_import"
     else:
-        # is not slow
-        return False
+        # fast
+        return "fast"
 
-SLOW_NOTEBOOKS = [nb for nb in ALL_NOTEBOOKS if is_slow(nb)]
-FAST_NOTEBOOKS = [nb for nb in ALL_NOTEBOOKS if nb not in SLOW_NOTEBOOKS]
+notebook_groups = {
+    notebook_type: list(notebooks)
+    for notebook_type,notebooks
+    in groupby(sorted(ALL_NOTEBOOKS, key=notebook_type), key=notebook_type)
+}
 
 
 # the tests
 
-@pytest.mark.parametrize("nb_path", FAST_NOTEBOOKS, ids=lambda nb: nb.name)
+@pytest.mark.parametrize("nb_path", notebook_groups["fast"], ids=lambda nb: nb.name)
 def test_fast_notebooks(nb_path, notebook_kernel):
     '''By default only run fast notebooks'''
     output_path = OUTPUT_DIR / f"{nb_path.stem}_out.ipynb"
@@ -76,15 +80,53 @@ def test_fast_notebooks(nb_path, notebook_kernel):
         kernel_name=notebook_kernel,
     )
 
-@pytest.mark.skip
-@pytest.mark.parametrize("nb_path", SLOW_NOTEBOOKS, ids=lambda nb: nb.name)
-def test_slow_notebooks(nb_path, notebook_kernel):
+@pytest.mark.integration
+@pytest.mark.parametrize("nb_path", 
+                         notebook_groups["data_download"] + notebook_groups["full_import"], 
+                         ids=lambda nb: nb.name)
+def test_integration_notebooks(nb_path, notebook_kernel):
     '''
-    Slow notebooks can only be run if manually specified,
-    eg pytest tests/test_notebooks.py::test_slow_notebooks.
+    Slow notebooks are marked as integration and are only run if 
+    manually specified, eg pytest -m integration.
     However, this may not work yet, since they require setting 
     an element id that doesn't exist on the play server.
     Could be nice to fix this in the future, maybe auto create metadata.
+    '''
+    output_path = OUTPUT_DIR / f"{nb_path.stem}_out.ipynb"
+    papermill.execute_notebook(
+        str(nb_path), 
+        str(output_path), 
+        cwd=str(nb_path.parent),
+        kernel_name=notebook_kernel,
+    )
+
+@pytest.mark.integration
+@pytest.mark.data_download
+@pytest.mark.parametrize("nb_path", 
+                         notebook_groups["data_download"],
+                         ids=lambda nb: nb.name)
+def test_data_download_notebooks(nb_path, notebook_kernel):
+    '''
+    Only the data download subset of integration tests.
+    Run with pytest -m "integration and data_download"
+    '''
+    output_path = OUTPUT_DIR / f"{nb_path.stem}_out.ipynb"
+    papermill.execute_notebook(
+        str(nb_path), 
+        str(output_path), 
+        cwd=str(nb_path.parent),
+        kernel_name=notebook_kernel,
+    )
+
+@pytest.mark.integration
+@pytest.mark.full_import
+@pytest.mark.parametrize("nb_path", 
+                         notebook_groups["full_import"],
+                         ids=lambda nb: nb.name)
+def test_full_import_notebooks(nb_path, notebook_kernel):
+    '''
+    Only the full import workflow subset of integration tests.
+    Run with pytest -m "integration and full_import"
     '''
     output_path = OUTPUT_DIR / f"{nb_path.stem}_out.ipynb"
     papermill.execute_notebook(
