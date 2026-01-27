@@ -1,4 +1,4 @@
-name: platform-support
+name: tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  install-python-versions-windows:
+  install-and-test-windows:
     runs-on: windows-latest
     strategy:
       fail-fast: false
@@ -35,11 +35,21 @@ jobs:
         shell: bash -l {0}
         run: |
           conda activate climate-tools
-          conda install pymeeus -y
-          conda install -c conda-forge jupyterlab ipywidgets jupyterlab_widgets -y
+          conda install -c conda-forge pymeeus jupyterlab ipywidgets jupyterlab_widgets -y
 
       - name: Install pip packages
         shell: bash -l {0}
         run: |
           conda activate climate-tools
           pip install --only-binary=:all: -r requirements.txt
+
+      - name: Register ipykernel
+        shell: bash -l {0}
+        run: |
+          python -m ipykernel install --user --name climate-tools
+          jupyter kernelspec list
+
+      - name: Test run the notebooks
+        shell: bash -l {0}
+        run: |
+          pytest --notebook-kernel=climate-tools -vv

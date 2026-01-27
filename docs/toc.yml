@@ -18,6 +18,7 @@ project:
       children:
         - file: getting-started/installation.md
         - file: getting-started/jupyter.md
+        - file: getting-started/updating.md
 
     - title: Guides
       file: guides/intro.md

@@ -1,8 +1,8 @@
 ---
-title: Working with Notebooks
+title: Interactive Notebooks
 ---
 
-This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook guides and end-to-end example workflows.
+This page shows how to get started with DHIS2 Climate Tools by running its interactive Jupyter notebook [guides](../guides/intro.md) and end-to-end example [workflows](../workflows/intro.md).
 
 Specifically we describe how to run the notebooks using the JupyterLab interface, but it's also possible to use any preferred tool such as the [VSCode Jupyter notebook extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
 
