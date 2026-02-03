@@ -1,8 +1,12 @@
-pandas==2.*
-earthkit-transforms>=0.5
-earthkit-plots
-dhis2eo @ git+https://github.com/dhis2/dhis2eo.git@v1.0.0
-dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git
-metpy
-jupyter
-papermill
+geopandas>=1.1,<2
+xarray>=2025.6,<2026
+numpy>=2.2,<3
+pandas>=2.3,<3
+earthkit-transforms==0.5.*
+earthkit-plots==0.3.*
+dhis2eo @ git+https://github.com/dhis2/dhis2eo.git@v1.0.1
+dhis2-client @ git+https://github.com/dhis2/dhis2-python-client.git@V0.3.0
+metpy>=1.7,<2
+jupyter>=1.1,<2
+papermill>=2.6,<3
+pytest>=8.3,<9

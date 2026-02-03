@@ -7,6 +7,8 @@ This guide explains how to set up automated, scheduled imports of climate data i
 
 The key technologies we will use are [Docker](https://www.docker.com/) as a container to run the schedule, [cron](https://en.wikipedia.org/wiki/Cron) as the actual scheduling program, and [papermill](https://papermill.readthedocs.io/) to run the import notebook. 
 
+For a complete example of an implementation that imports ERA5-Land data on a schedule, with additional convenience funcionality, see the [dhis2-era5land-simple](https://github.com/mortenoh/dhis2-era5land-simple) repository. 
+
 ## Prerequisites
 
 Before starting, ensure you have:
