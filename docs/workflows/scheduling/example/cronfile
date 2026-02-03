@@ -1,0 +1,16 @@
+# Set your local timezone here
+TZ=Europe/Oslo
+
+# Force the shell to bash (standardizes behavior)
+SHELL=/bin/bash
+
+# Add the Python/Pip installation path
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# ====================================================
+# Define one or more commands to be run at a schedule
+# Format is: {CRONPATTERN} {COMMAND}
+# The > /proc/1/fd/1 2>&1 at the end redirects the cron logs to Docker logs
+
+# Run ERA5 import for temperature at 02:00
+0 2 * * * papermill --cwd /app /app/notebooks/import-era5-daily.ipynb /app/data/import-temperature.output.ipynb -f /app/configs/import-temperature-config.yaml --log-output --no-progress-bar > /proc/1/fd/1 2>&1

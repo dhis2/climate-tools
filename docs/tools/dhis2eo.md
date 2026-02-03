@@ -1,6 +1,6 @@
 # dhis2eo
 
-[dhis2eo](https://github.com/dhis2/climate-tools) (short for **DHIS2 Earth Observation**) is our utility library for working with earth observation data and data transformation.
+[dhis2eo](https://github.com/dhis2/dhis2eo) (short for **DHIS2 Earth Observation**) is our utility library for working with earth observation data and data transformation.
 
 For most of the data processing and handling, we currently recommend using the `earthkit` package directly.
 

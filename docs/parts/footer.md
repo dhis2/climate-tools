@@ -3,8 +3,8 @@
     <a href="https://dhis2.org/" target="_blank">DHIS2.org</a>
     <a href="https://dhis2.org/climate/" target="_blank">Climate & Health</a>
     <a href="https://chap.dhis2.org/" target="_blank">Chap & Modelling</a>
-    <a href="https://developers.dhis2.org/" target="_blank">Developer Portal</a>
-    <a href="https://community.dhis2.org/" target="_blank">Community</a>
+    <a href="https://community.dhis2.org/c/development/climate-tools/93" target="_blank">Community</a>
+    <a href="https://github.com/dhis2/climate-tools" target="_blank">Github</a>
 </div>
 
 :::::{grid} 2 2 2 2
@@ -17,7 +17,7 @@ climate@dhis2.org
 ::::{div}
 :class: dhis2-footer-right
 [DHIS2](https://dhis2.org/)\
-[Community](https://community.dhis2.org/)
+[Community](https://community.dhis2.org/c/development/climate-tools/93)
 ::::
 
 :::::

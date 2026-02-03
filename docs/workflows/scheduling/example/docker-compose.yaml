@@ -1,0 +1,19 @@
+services:
+  schedule:
+    build: .
+    image: climate-scheduler:latest     # Explicit image name
+    container_name: climate-scheduler   # Explicit container name
+    restart: unless-stopped             # Restarts in the case of a crash
+    environment:
+      - TZ=Europe/Oslo                  # Set your local timezone here
+    volumes:
+      - .:/app                          # Links current folder content to app folder
+      - ./data:/app/data          # Links local data folder to container folder
+      - ~/.cdsapirc:/root/.cdsapirc:ro  # Links local CDS API key to container root user folder
+    command: >
+      sh -c "
+        dos2unix /app/cronfile &&
+        crontab /app/cronfile &&
+        cron &&
+        tail -f /dev/null
+      "
