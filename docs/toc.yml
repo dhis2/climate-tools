@@ -65,6 +65,10 @@ project:
           children:
             - file: guides/import-data/prepare-metadata.ipynb
             - file: guides/import-data/import-data-values.ipynb
+        - title: Import data to Chap
+          file: guides/import-chap/intro.md
+          children:
+            - file: guides/import-chap/harmonize-to-chap.ipynb
 
     - title: Workflows
       file: workflows/intro.md
@@ -73,7 +77,6 @@ project:
         - file: workflows/import-chirps3/import-chirps3-daily.ipynb
         - file: workflows/import-worldpop/import-pop-yearly.ipynb
         - file: workflows/import-dengue/import-opendengue.ipynb
-        - file: workflows/harmonize-data/harmonize-to-chap.ipynb
         - file: workflows/scheduling/schedule-era5-import.md
 
     - file: tools/intro.md
