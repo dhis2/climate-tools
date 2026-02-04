@@ -72,6 +72,8 @@ project:
         - file: workflows/import-era5/import-era5-daily.ipynb
         - file: workflows/import-chirps3/import-chirps3-daily.ipynb
         - file: workflows/import-worldpop/import-pop-yearly.ipynb
+        - file: workflows/import-dengue/import-opendengue.ipynb
+        - file: workflows/harmonize-data/harmonize-to-chap.ipynb
         - file: workflows/scheduling/schedule-era5-import.md
 
     - file: tools/intro.md
