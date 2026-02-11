@@ -65,6 +65,10 @@ project:
           children:
             - file: guides/import-data/prepare-metadata.ipynb
             - file: guides/import-data/import-data-values.ipynb
+        - title: Import data to Chap
+          file: guides/import-chap/intro.md
+          children:
+            - file: guides/import-chap/harmonize-to-chap.ipynb
 
     - title: Workflows
       file: workflows/intro.md
