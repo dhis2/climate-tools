@@ -46,6 +46,9 @@ project:
             - file: guides/getting-data/worldpop/intro.md
               children:
               - file: guides/getting-data/worldpop/worldpop-total-download.ipynb
+            - file: guides/getting-data/open-dengue/intro.md
+              children:
+              - file: guides/getting-data/open-dengue/opendengue-download.ipynb
         - title: Data analysis
           file: guides/analysis/intro.md
           children:
@@ -76,7 +79,6 @@ project:
         - file: workflows/import-era5/import-era5-daily.ipynb
         - file: workflows/import-chirps3/import-chirps3-daily.ipynb
         - file: workflows/import-worldpop/import-pop-yearly.ipynb
-        - file: workflows/import-dengue/import-opendengue.ipynb
         - file: workflows/scheduling/schedule-era5-import.md
 
     - file: tools/intro.md
