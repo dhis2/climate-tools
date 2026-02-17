@@ -6,4 +6,4 @@ The [OpenDengue project](https://opendengue.org/) is run by researchers at the L
 
 We provide some guidance on how to make these data interoperable with DHIS2. See:
 
-- [Downloading and Harmonizing Dengue Data from OpenDengue](opendengue-download.ipynb)
+- [How to download and harmonize dengue case data from OpenDengue](opendengue-download.ipynb)
