@@ -55,7 +55,7 @@ Since we are using [papermill](https://papermill.readthedocs.io/) to run the not
 Papermill can then [read parameters from a yaml file](https://papermill.readthedocs.io/en/latest/usage-execute.html#using-a-parameters-file), and then inject and override those defined in the notebook cell with the `parameters` tag. For this tutorial, we have included an [import-temperature-config.yaml](./example/configs/import-temperature-config.yaml) file where we set the parameters to import temperature data instead of the default precipitation. 
 
 ```bash
-DHIS2_BASE_URL: https://play.im.dhis2.org/stable-2-42-3-1
+DHIS2_BASE_URL: https://climate.im.dhis2.org/climate-tools-42
 DHIS2_USERNAME: admin
 DHIS2_PASSWORD: district
 
