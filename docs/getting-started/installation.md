@@ -27,8 +27,9 @@ DHIS2 Climate Tools is available as a [single GitHub repository](https://github.
 To download the latest version of the toolkit to your local machine, clone the repository:
 
     git clone https://github.com/dhis2/climate-tools
+    cd climate-tools
 
-The DHIS2 Climate Tools is updated on a continuous basis to update the notebooks and reference environment. 
+The DHIS2 Climate Tools is updated on a continuous basis to update the notebooks and reference environment.
 
 ## Setup the environment
 
