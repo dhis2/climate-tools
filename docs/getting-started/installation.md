@@ -15,7 +15,7 @@ Before you get started with DHIS2 Climate Tools, make sure you have the followin
 
 ## Supported Python versions
 
-The DHIS2 Climate Tools supports the following Python versions: **Python 3.10, 3.11, 3.12, and 3.13**.
+The DHIS2 Climate Tools supports the following Python versions: **Python 3.11, 3.12, and 3.13**.
 
 ## Download the DHIS2 Climate Tools toolkit
 
