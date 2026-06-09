@@ -20,6 +20,15 @@ project:
         - file: getting-started/jupyter.md
         - file: getting-started/updating.md
 
+    - title: Open Climate Service
+      file: open-climate-service/intro.md
+      children:
+        - file: open-climate-service/connect-and-explore.ipynb
+        - file: open-climate-service/use-with-openeo-client.ipynb
+        - file: open-climate-service/aggregate-to-org-units.ipynb
+        - file: open-climate-service/prepare-data-for-chap.ipynb
+        - file: open-climate-service/animate-with-mapflow.ipynb
+
     - title: Guides
       file: guides/intro.md
       children:
