@@ -24,6 +24,7 @@ pip install "open-climate-service[xarray]"
 - [Use with the openEO Python client](use-with-openeo-client.ipynb) — drive an instance with the standard, portable openEO client.
 - [Aggregate to organisation units](aggregate-to-org-units.ipynb) — run a server-side workflow that aggregates a dataset to your org units, then import the result into DHIS2.
 - [Prepare data for Chap](prepare-data-for-chap.ipynb) — produce a Chap-ready CSV from a single workflow call.
+- [Animate with mapflow](animate-with-mapflow.ipynb) — turn a dataset into a time-lapse video.
 
 ## How it fits with Climate Tools
 

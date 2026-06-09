@@ -27,6 +27,7 @@ project:
         - file: open-climate-service/use-with-openeo-client.ipynb
         - file: open-climate-service/aggregate-to-org-units.ipynb
         - file: open-climate-service/prepare-data-for-chap.ipynb
+        - file: open-climate-service/animate-with-mapflow.ipynb
 
     - title: Guides
       file: guides/intro.md
